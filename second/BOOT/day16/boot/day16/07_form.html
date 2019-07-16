@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-scale=1"/>
+    <title></title>
+    <!-- 引入4个文件，必须注意导入顺序-->
+    <link rel="stylesheet" href="../css/bootstrap.css"/>
+    <link rel="stylesheet" href="../js/jquery.min.js"/>
+    <link rel="stylesheet" href="../js/popper.min.js"/>
+    <link rel="stylesheet" href="../js/bootstrap.min.js"/>
+</head>
+<body>
+<div class="container">
+    <form action="">
+        <div class="form-inline form-text">
+            <div class="col-2 mt-2">用户名</div>
+            <div class="col-6"><input type="text" class="form-control w-100"/></div>
+            <div class="col-4 mt-2">用户名包含字母数字3~8位</div>
+        </div>
+        <div class="row mt-3">
+            <div class="col-2 mt-2">密码</div>
+            <div class="col-6"><input type="text" class="form-control"/></div>
+            <div class="col-4 mt-2">密码包含字母数字3~8位</div>
+        </div>
+        <div class="row">
+            <button class="btn btn-success">注册</button>
+            <button class="btn btn-danger">取消</button>
+        </div>
+    </form>
+    <br/>
+    <hr/>
+    <br/>
+    <form action="" class="form-group">
+        <div>
+            用户名称: <input type="text" class="form-control"/>
+        </div>
+        <div>
+            用户密码: <input type="password"/>
+        </div>
+        <div>
+            <input type="checkbox" id="auto"/>
+            <label for="auto">自动登录</label>
+        </div>
+        <button class="btn btn-primary">登录</button>
+    </form>
+</div>
+</body>
+</html>

@@ -1,0 +1,165 @@
+
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <mate name="viewport" content="width=device-width,initial-scale=1"/>
+    <title>组件.按钮组</title>
+    <!--y引入4个文件，必须注意导入顺序 -->
+    <link rel="stylesheet" href="../css/bootstrap.css"/>
+    <script src="../js/jquery.min.js"></script>
+    <script src="../js/popper.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <style>
+        .btn-group-sm>.btn{
+            padding:1rem 1.5rem;/*重新sm样式*/
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>卡片</h1>
+    <div class="card">
+        <div class="card-header">卡片头部</div>
+        <div class="card-body">
+            <a href="#" class="card-link">卡片主体</a>
+        </div>
+        <div class="card-footer">卡片底部</div>
+    </div>
+    <br/>
+    <hr/>
+    <br/>
+    <h1>折叠</h1>
+    <button data-toggle="collapse" data-target="#demo" class="btn btn-danger">点点我试试</button>
+    <div id="demo" class="collapse">折叠的内容 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus animi at corporis doloremque eligendi et expedita labore libero nemo, odio officiis pariatur perferendis placeat rerum soluta vel veritatis! Asperiores, consequuntur?</div>
+    <br/>
+    <hr/>
+    <br/>
+    <h1>导航栏</h1>
+    <div class="navbar navbar-expand-lg">
+        <ul class="navbar-nav">
+            <li class="nav-item"><a class="nav-link" href="#">导航栏1</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">导航栏2</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">导航栏3</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">导航栏4</a></li>
+        </ul>
+    </div>
+    <br/>
+    <hr/>
+    <br/>
+    <h1>胶囊导航</h1>
+    <ul class="nav nav-pills">
+        <li class="nav-item">
+            <a data-toggle="pill" href="#tab11" class="nav-link">口红</a>
+        </li>
+        <li class="nav-item">
+            <a data-toggle="pill" href="#tab12" class="nav-link">游戏机</a>
+        </li>
+        <li class="nav-item">
+            <a data-toggle="pill" href="#tab13" class="nav-link">包包</a>
+        </li>
+        <li class="nav-item">
+            <a data-toggle="pill" href="#tab14" class="nav-link">汽车</a>
+        </li>
+    </ul>
+    <div class="tab-content">
+        <div id="tab11" class="tab-pane">迪奥，古驰，YSL，TF，故宫</div>
+        <div id="tab12" class="tab-pane">PS4，switch，3ds,XBOX</div>
+        <div id="tab13" class="tab-pane">小香香，MK</div>
+        <div id="tab14" class="tab-pane">五菱宏光，GTR，特斯拉，兰博基尼</div>
+    </div>
+    <br/>
+    <hr/>
+    <br/>
+    <h1>选项卡导航练习</h1>
+    <!-- 选项卡按钮-->
+    <ul class="nav nav-tabs">
+        <li class="nav-item">
+            <a data-toggle="tab" href="#id1" class="nav-link">口红</a>
+        </li>
+        <li class="nav-item">
+            <a data-toggle="tab" href="#id2" class="nav-link">游戏机</a>
+        </li>
+        <li class="nav-item">
+            <a data-toggle="tab" href="#id3" class="nav-link active">包包</a>
+        </li>
+        <li class="nav-item">
+            <a data-toggle="tab" href="#id4" class="nav-link">汽车</a>
+        </li>
+    </ul>
+    <!-- 选项卡的内容-->
+    <div class="tab-content">
+        <div class="tab-pane" id="id1">迪奥，古驰，YSL，TF，故宫</div>
+        <div class="tab-pane" id="id2">PS4，switch，3ds,XBOX</div>
+        <div class="tab-pane active" id="id3">小香香，MK</div>
+        <div class="tab-pane" id="id4">五菱宏光，GTR，特斯拉，兰博基尼</div>
+    </div>
+    <br/>
+    <hr/>
+    <br/>
+    <h1>选项卡导航</h1>
+    <!-- 选项卡按钮-->
+    <ul class="nav nav-tabs">
+        <li class="nav-item">
+            <a data-toggle="tab" href="#tab1" class="nav-link active">东北菜</a>
+        </li>
+        <li class="nav-item">
+            <a data-toggle="tab" href="#tab2" class="nav-link">四川菜</a>
+        </li>
+        <li class="nav-item">
+            <a data-toggle="tab" href="#tab3" class="nav-link">广东菜</a>
+        </li>
+        <li class="nav-item">
+            <a data-toggle="tab" href="#tab4" class="nav-link">山东菜</a>
+        </li>
+        <li class="nav-item">
+            <a data-toggle="tab" href="#tab5" class="nav-link">陕西菜</a>
+        </li>
+    </ul>
+    <!-- 选项卡的内容-->
+    <div class="tab-content">
+        <div id="tab1" class="tab-pane active">小鸡炖蘑菇，猪肉炖粉条</div>
+        <div id="tab2" class="tab-pane">钵钵鸡，担担面，火锅</div>
+        <div id="tab3" class="tab-pane">虾饺，佛跳墙</div>
+        <div id="tab4" class="tab-pane">煎饼，烙饼卷大葱，扒鸡</div>
+        <div id="tab5" class="tab-pane">泡馍，凉皮，臊子面</div>
+    </div>
+    <br/>
+    <hr/>
+    <br/>
+    <h1>水平导航</h1>
+    <ul class="nav justify-content-around">
+        <li class="nav-item"><a href="#" class="nav-link">秒杀</a></li>
+        <li class="nav-item"><a href="#" class="nav-link">优惠</a></li>
+        <li class="nav-item"><a href="#" class="nav-link">plus会员</a></li>
+        <li class="nav-item"><a href="#" class="nav-link">闪购</a></li>
+    </ul>
+    <br/>
+    <hr/>
+    <br/>
+    <h1>按钮组</h1>
+    <div class="btn-group btn-group-sm">
+        <button class="btn btn-danger">小笼包</button>
+        <button class="btn btn-success">油条</button>
+        <button class="btn btn-warning">豆浆</button>
+        <button class="btn btn-primary">鸡丝粥</button>
+    </div><br><br>
+
+    <h1>下拉菜单</h1>
+    <div class="dropdown">
+        <button class="btn btn-danger dropdown-toggle" data-toggle="dropdown">下拉菜单</button>
+        <ul class="list-unstyled dropdown-menu">
+            <li><a href="#">菜单1</a></li>
+            <li><a href="#">菜单2</a></li>
+            <li><a href="#">菜单3</a></li>
+            <li><a href="#">菜单4</a></li>
+        </ul>
+    </div>
+    <br>
+    <h1>信息提示框</h1>
+    <div class="alert alert-success alert-dismissible">
+        <span class="close" data-dismiss="alert">&times;</span>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. A aperiam corporis cum eligendi illo iste iure laudantium, libero nemo numquam optio pariatur perspiciatis provident reprehenderit sunt ut veniam voluptatum. Doloribus.</div>
+</div>
+</body>
+</html>

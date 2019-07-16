@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <title></title>
+    <!-- 引入4个文件，必须注意导入顺序-->
+    <link rel="stylesheet" href="../css/bootstrap.css"/>
+    <script src="../js/jquery.min.js"></script>
+    <script src="../js/popper.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <style>
+        #top{
+            width:100%;height:437px;
+            background:linear-gradient(to right,#0d0536,#562949);
+        }
+        #top:before{
+            content:"";display:table;
+
+        }
+        .title{margin:0 auto;
+            margin-top:100px;
+            font-size:5rem;
+        }
+        .details{
+            width:100%;
+        }
+        @media (min-width: 992px) {
+            #imgs>img{width:25%;}
+        }
+        @media (min-width: 768px) and (max-width: 991px){
+            #imgs>img{width:50%;}
+        }
+        @media (max-width: 767px){
+            #imgs>img{width:100%;}
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <ul class="list-unstyled d-flex bg-dark justify-content-start mb-0 py-3">
+        <li class="mx-lg-4 mx-md-3 mx-sm-2"><a class="text-white " href="#">BootStap中文网</a></li>
+        <li class="mx-lg-4 mx-md-3 mx-sm-2"><a class="text-white" href="#">BootStap1</a></li>
+        <li class="mx-lg-4 mx-md-3 mx-sm-2"><a class="text-white" href="#">BootStap2</a></li>
+        <li class="mx-lg-4 mx-md-3 mx-sm-2"><a class="text-white" href="#">BootStap3</a></li>
+        <li class="mx-lg-4 mx-md-3 mx-sm-2"><a class="text-white" href="#">BootStap4</a></li>
+    </ul>
+    <div id="top">
+        <h1 class="title text-center text-white">BootStrap</h1>
+        <h5 class="details text-center text-muted mt-3">简洁、直观、强悍的前端开发框架，让web开发更迅速简单</h5>
+        <div class="text-center mt-3">
+            <a href="#" class="btn btn-primary">BootStrap3中文文档(v4.0.0)</a>
+        </div>
+        <div class="text-center">
+            <a href="#" class="view_link btn btn-link text-white  h6 mt-3">BootStrap2中文文档(v3.4.0)</a>
+        </div>
+    </div>
+    <div id="imgs">
+        <img src="boot-1.png" alt=""/><img src="boot-2.png" alt=""/><img src="boot-3.png" alt=""/><img src="boot-4.png" alt=""/>
+    </div>
+
+</div>
+</body>
+</html>

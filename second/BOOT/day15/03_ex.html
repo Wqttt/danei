@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>03_ex</title>
+		<style>
+			*{
+				margin:0;
+				padding:0;
+				box-sizing:border-box;
+			}
+			div{
+				border:1px solid #000;
+			}
+			div.left ul{
+				list-style:none;
+			}
+			div.left ul li{
+				border:3px solid purple;
+			}
+			.left,.middle,.right{
+				float:left;
+			}
+			/*解决高度坍塌*/
+			.container:after{
+				content:"";
+				display:block;
+				clear:both;
+			}
+			.middle img{
+				padding:2px;
+			}
+			@media screen and (min-width:992px){
+				.container{
+					width:1000px;
+					margin:0 auto;
+				}
+				.left,.right{
+					width:20%;
+				}
+				.middle{
+					width:60%;
+				}
+				.container .middle img{
+					width:25%;
+				}
+			}
+			@media screen and (min-width:768px) and
+			(max-width:991px){
+				.container{
+					width:800px;
+					margin:0 auto;
+				}
+				.left{
+					width:30%;
+				}
+				.middle{
+					width:70%;
+				}
+				.right{
+					display:none;
+				}
+				.container .middle img{
+					width:25%;
+				}
+			}
+			@media (max-width:767px){
+				.container{
+					width:100%;
+					margin:0 auto;
+				}
+				.left{
+					width:100%;
+				}
+				.middle{
+					width:100%;
+				}
+				.right{
+					width:100%;
+				}
+				.container .middle img{
+					width:50%;
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<div class="left">
+				<ul>
+					<li><a href="#">豆蔻年华</a></li>
+					<li><a href="#">豆蔻年华</a></li>
+					<li><a href="#">豆蔻年华</a></li>
+					<li><a href="#">豆蔻年华</a></li>
+				</ul>
+			</div>
+			<div class="middle">
+				<div class="imgs">
+					<img src="img/1.jpg" alt="">
+					<img src="img/2.jpg" alt="">
+					<img src="img/3.jpg" alt="">
+					<img src="img/4.jpg" alt="">
+				</div>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere aliquid maxime consequatur pariatur possimus esse sed autem. Sapiente fuga facilis error unde quas reprehenderit quod quisquam sequi consequuntur ut iste illo asperiores ad dolores harum tempora adipisci.</p>
+			</div>
+			<div class="right">
+				<p>右侧广告Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto odit repudiandae nisi perspiciatis qui repellendus molestiae sit voluptatum odio voluptas harum illo non porro id in. Sint accusamus minima veniam!</p>
+			</div>
+		</div>  
+	</body>
+</html>

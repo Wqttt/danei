@@ -1,0 +1,63 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style>
+			*{margin:0;padding:0;
+				box-sizing:border-box;
+			}
+			div{border:1px solid #000}
+			div.left ul{list-style:none;}
+			div.left ul li{border:3px solid purple;}
+			.left,.middle,.right{float:left;}
+			/*解决高度坍塌*/
+			.container:after{
+				content:"";display:block;clear:both;
+			}
+			.middle img{padding:5px;}
+			@media screen and (min-width:992px){
+				.container{width:1000px;margin:0 auto;}
+				.left,.right{width:20%;}
+				.middle{width:60%;}
+				.container .middle img{width:25%;}
+			}
+			@media (min-width:768px) and (max-width:991px){
+				.container{width:800px;margin:0 auto;}
+				.left{width:30%;}
+				.middle{width:70%;}
+				.right{display:none;}
+				.container .middle img{width:25%;}
+			}
+			@media  (max-width:767px){
+				.container{width:100%;margin:0 auto;}
+				.left{width:100%;}
+				.middle{width:100%;}
+				.right{width:100%;}
+				.container .middle img{width:50%;}
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<div class="left">
+				<ul>
+					<li><a href="#">豆蔻年华</a></li>
+					<li><a href="#">豆蔻年华</a></li>
+					<li><a href="#">豆蔻年华</a></li>
+					<li><a href="#">豆蔻年华</a></li>
+				</ul>
+			</div>
+			<div class="middle">
+				<div class="imgs">
+					<img src="1.jpg" alt=""><img src="2.jpg" alt=""><img src="3.jpg" alt=""><img src="4.jpg" alt="">
+				</div>
+				<p>
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium distinctio ullam perspiciatis reprehenderit sapiente obcaecati dolores inventore excepturi culpa voluptatem adipisci necessitatibus quidem nobis qui numquam animi minus fuga iusto quam optio. Ab voluptas laborum ullam iusto totam ad inventore error delectus tempora atque accusamus nobis sint. Animi unde autem ipsam vero corporis magni laboriosam repellendus magnam explicabo beatae tempora doloremque placeat dolores architecto nihil dicta temporibus? Ipsam fugiat asperiores quisquam assumenda pariatur eligendi numquam qui laborum facere aliquam ipsa perspiciatis labore id praesentium molestias tempore nihil sapiente porro perferendis ducimus. Obcaecati amet odit sit veritatis rerum reprehenderit aut quaerat.</p>
+			</div>
+			<div class="right">
+				<p>右侧广告 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores soluta nisi laudantium perspiciatis aspernatur natus at nemo cupiditate quam porro. Obcaecati nobis quasi neque possimus incidunt tenetur consequuntur sit temporibus voluptatum repellat velit corporis vel numquam veritatis quidem quis ipsam voluptate ut rerum est culpa odio iure a nam molestiae?</p>
+			</div>
+		</div>
+	</body>
+</html>	

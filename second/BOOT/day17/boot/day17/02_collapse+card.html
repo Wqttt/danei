@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-scale=1"/>
+    <title>手风琴</title>
+    <!-- 引入4个文件，必须注意导入顺序-->
+    <link rel="stylesheet" href="../css/bootstrap.css"/>
+    <script src="../js/jquery.min.js"></script>
+    <script src="../js/popper.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+</head>
+<body>
+<div class="container">
+    <div id="parent">
+    <div class="card">
+        <div class="card-header">
+            <a href="#c1" class="card-link" data-toggle="collapse">钢铁侠</a>
+        </div>
+        <div id="c1" data-parent="#parent" class="collapse">
+            <div class="card-body">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam architecto cum cumque dignissimos dolore doloremque eveniet, exercitationem fugit hic in, magni maxime neque obcaecati, possimus praesentium saepe sequi temporibus ut.
+            </div>
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-header">
+            <a href="#c2" class="card-link" data-toggle="collapse">蜘蛛侠</a>
+        </div>
+        <div id="c2" data-parent="#parent" class="collapse">
+            <div class="card-body">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores at, blanditiis dolore dolorem eos eveniet ipsam laboriosam, molestiae nesciunt perferendis perspiciatis porro possimus praesentium quia quo quos temporibus tenetur ullam.
+            </div>
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-header">
+            <a href="#c3" class="card-link" data-toggle="collapse">飞天小女警</a>
+        </div>
+        <div id="c3" data-parent="#parent" class="collapse">
+            <div class="card-body">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi consequuntur enim error impedit modi porro ratione reprehenderit. Alias aliquam culpa ea itaque laudantium magnam nostrum quasi qui ratione suscipit. Reprehenderit.
+            </div>
+        </div>
+    </div>
+    </div>
+</div>
+</body>
+</html>
