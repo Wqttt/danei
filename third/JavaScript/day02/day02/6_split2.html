@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+<!--.innerHTML 元素开始标签到结束标签之间的所有HTML片段-->
+<ul id="ul-scores">
+  <li>95</li>
+  <li>70</li>
+  <li>85</li>
+  <li>88</li>
+</ul>
+<script>
+var ul=//查询id为ul-scores的ul元素
+document.getElementById("ul-scores")
+//获得元素的内容: 
+var html=ul.innerHTML;
+console.log(html); 
+//先删除开头的空字符<li>
+html=html.replace(/^\s*<li>/i,"");
+//再删除结尾的</li>空字符
+html=html.replace(/<\/li>\s*$/i,"");
+//再按</li>空字符<li>切割
+var arr=html.split(/<\/li>\s*<li>/i);
+arr.sort(function(a,b){return b-a});
+console.log(arr);
+</script>
+</body>
+</html>

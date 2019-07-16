@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+<script>
+//请用户输入密码
+var pwd=
+  prompt("请输入电话银行的密码")
+//定义正则表达式规定密码必须是6位数字
+//var reg=/^\d{6}$/;//从头到尾只能有6位数字
+var reg=new RegExp("^\\d{6}$");
+console.log(reg);// /^d{6}$/
+//如果用reg检查密码通过！
+if(reg.test(pwd)==true){
+  //就提示验证通过
+  document.write(`<h1 style="color:green">验证通过</h1>`)
+}else{//否则
+  //就提示密码格式不正确
+  document.write(`<h1 style="color:red">密码格式不正确</h1>`)
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+<script>
+//将每个单词首字母转为大写
+var str="you can you up";
+str=str.replace(
+  /\b[a-z]/g,
+  function(kword){
+    console.log("======调用一次匿名函数======");
+    console.log(`本次收到参数kword=${kword}`);
+    console.log(`加工后变为kword=${kword.toUpperCase()}`);
+    console.log("======本次调用结束=======");
+    return kword.toUpperCase();
+  }
+)
+console.log(str);//You Can You Up
+</script>
+</body>
+</html>

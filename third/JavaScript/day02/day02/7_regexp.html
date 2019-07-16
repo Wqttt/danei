@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+<script>
+//数据库: 明月，白鹭
+//  ↓
+//ajax: [明月,白鹭]
+var kwords=["明月","白鹭"];
+        //.join("|") "明月|白鹭"
+
+
+console.log(kwords.join("|"));
+var str=kwords.join("|");
+var msg=prompt("请输入消息");
+var reg=new RegExp(str);
+                //"明月|白鹭"
+console.log(reg);// /明月|白鹭/
+var i=msg.search(reg);//将reg放入支持正则的函数中作为参数去查找
+if(i!=-1){
+  document.write(`<h1 style="color:red">包含敏感词，禁止发送</h1>`)
+}else{
+  document.write(`<h1>然哥说:${msg}</h1>`)
+}
+</script>
+</body>
+</html>

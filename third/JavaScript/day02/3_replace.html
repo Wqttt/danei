@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+<script>
+var str="老师:请用小红 我的 朋友造句。小亮:小红是我的朋友。小然：朋友！小红是我的！";
+/*var str="明明喜欢我，却不告诉我。别理我，我想静静。静静是谁？你先告诉我明明是谁？";*/
+//找到小x
+var reg=/小[\u4e00-\u9fa5]/g;
+console.log(reg);
+//将reg找到的小x放到arr数组中
+var arr=str.match(reg);
+console.log(arr);
+//arr=null，用**替换小x
+str=str.replace(reg,"**");
+console.log(str);
+//如果arr为空返回0，否则返回找到的个数
+console.log(`共替换${
+  arr===null?0:arr.length
+}处`);
+//console.log(`共替换${arr.length}处`)
+//                  null.length
+//          无法访问null的length属性
+//Cannot read property 'length' of null
+//             undefined.
+//          无法访问undefined的xxx属性
+</script>
+</body>
+</html>

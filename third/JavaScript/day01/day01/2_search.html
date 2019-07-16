@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+<script>
+//请用户输入一条消息
+var msg=prompt("输入一条消息:");
+//在消息中用正则表达式查找符合要求的敏感词
+var i=msg.search(/([我卧]|wo)\s*([草艹槽]|cao)/i);
+//如果包含敏感词
+if(i!=-1){
+  //就在网页中输出: 包含敏感词，关小黑屋
+  document.write(`<h1 style="color:red">包含敏感词！关小黑屋！</h1>`);
+}else{//否则
+  //就在网页中输出: 然哥说:xxxx
+  document.write(`<h1>然哥说: ${msg}</h1>`)
+}
+</script>
+</body>
+</html>

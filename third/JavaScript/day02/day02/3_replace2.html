@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+<script>
+var str="you can you up";
+//       ↑   ↑   ↑   ↑
+str=     str.replace(//2个形参
+  /\b[a-z]/g,
+  //因为能找到4个首字母，所以匿名函数会被自动调用4次,kword依次接到的是: 
+  //         y  c  y  u
+  function(keyword){//一个形参
+    return keyword.toUpperCase();
+            // 转为大写字母形式
+  //Y    C    Y    U
+  }
+);
+console.log(str);//You Can You Up
+</script>
+</body>
+</html>

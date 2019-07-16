@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+<script>
+//数据库: 表: "明月", "紫烟", "青天"
+//        ↑       |
+//        |       |
+//        |       ↓
+//浏览器: ajax ["明月","紫烟","青天"]
+var arr=["明月","紫烟","青天"];
+
+
+var msg=prompt("请输入消息内容")
+//将从服务端获得的数组拼接为字符串，用|连接每个元素
+var str=arr.join("|");
+//明月|紫烟|青天
+console.log(str);
+var reg=new RegExp(str)
+// /明月|紫烟|青天/
+console.log(reg);
+var i=msg.search(reg);
+if(i!=-1){
+  //就提示不让发送
+  document.write(`<h1 style="color:red">发现敏感词！禁止发送！</h1>`)
+}else{//否则
+  //就显示消息内容  
+  document.write(`<h1>然哥说: ${msg}</h1>`)
+}
+</script>
+</body>
+</html>

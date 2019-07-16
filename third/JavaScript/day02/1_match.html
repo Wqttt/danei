@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+<script>
+//请用户输入一条消息
+var msg=prompt("请输入您的消息内容：");
+//那天我去了她家，我说：我草！你家真大！
+//0 1 2 3 4 5 6 78 9 0 1
+//                     ↑
+//                    11
+//在消息中查找敏感词
+var arr=msg.match(/([我卧]|wo)\s*([草艹操]|cao)/i);
+//arr:[
+  //0: "我草",
+  //...
+  //index:11
+//]
+console.log(arr);
+//如果找到
+if(arr!=null){
+  //就提示不让发送
+  document.write(`<h1 style="color:red">在位置${arr["index"]}处，发现敏感词:${arr[0]}</h1>`);
+}else{//否则
+  document.write(`<h1 style="color:green">然哥说：${msg}</h1>`)
+}  
+</script>
+</body>
+</html>
