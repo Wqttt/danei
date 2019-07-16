@@ -1,0 +1,31 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+<title>DOM Tree</title>
+<meta charset="utf-8" />
+<style>
+	h1{background-color:yellow;color:red;}
+	#s1{font-style:italic;}
+</style>
+</head>
+<body>
+	<span id="s1">Hello</span>
+	<h1>标题一</h1>
+	<script>
+		//获得body
+		var body=document.body;
+		console.log(body);
+		//获得body下第一个孩子--span
+		var span=body.firstElementChild;
+		console.log(span);
+		//获得body下最后一个孩子--script
+		var script=body.lastElementChild;
+		console.log(script);
+		//获得h1
+		//var h1=span.nextElementSibling;
+		var h1=script.previousElementSibling;
+		console.log(h1);
+		console.log(body.children);
+	</script>
+</body>
+</html>
