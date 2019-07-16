@@ -1,0 +1,80 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+<title>动态创建表格</title>
+<meta charset="utf-8" />
+<style>
+	table{width:600px; border-collapse:collapse;
+		text-align:center;
+	}
+	td,th{border:1px solid #ccc}
+</style>
+
+</head>
+<body>
+<div id="data">
+  <table>
+    <thead>
+      <tr>
+        <th>姓名</th>
+        <th>薪资</th>
+        <th>年龄</th>
+        <th>delete</th>
+      </tr>
+    </thead>
+  </table>
+</div>
+<script>
+var json=[
+  {"ename":"Tom", "salary":11000, "age":25},
+  {"ename":"John", "salary":13000, "age":28},
+  {"ename":"Mary", "salary":12000, "age":25}
+];
+
+//创建tbody，但，暂时不追加到table中。
+var tbody=document.createElement("tbody");
+
+//遍历json数组中每个员工对象
+for(var emp of json){
+  //先创建一个tr，追加到tbody末尾
+  var tr=tbody.insertRow();
+        //    .insertRow(0);
+  //遍历当前员工对象中每个属性
+  for(var key in emp){
+    //每遍历一个属性就创建一个td，追加到tr末尾
+    var td=tr.insertCell();
+    //设置td的内容为当前emp对象的当前key属性的值
+    td.innerHTML=emp[key];
+  }
+  //在向当前行中添加完员工基本信息后，额外多加一个td,td中包含一个按钮
+  //先添加td，并追加到当前tr结尾
+  var td=tr.insertCell();
+  //再创建一个按钮
+  var btn=document.createElement("button");
+  //设置按钮的内容为x
+  btn.innerHTML="x";
+  //为当前按钮绑定单击事件
+  btn.onclick=function(){
+    //先找到当前按钮
+    var btn=this;
+    //再找到当前按钮的爹的die
+    var tr=
+      btn.parentNode.parentNode;
+            //td        //tr
+    //先跟用户确认是否继续删除
+    if(confirm(`是否继续删除 ${tr.cells[0].innerHTML} 吗？`)){
+      table.deleteRow(tr.rowIndex);
+    }
+  }
+  //然后将btn加入td中
+  td.appendChild(btn);
+}
+
+//最后，找到table
+var table=
+  document.getElementsByTagName("table")[0];
+//将组装完的tbody追加到table中末尾
+table.appendChild(tbody);
+</script>
+</body>
+</html>

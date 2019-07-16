@@ -1,0 +1,50 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+<title>navigator对象常用属性</title>
+<meta charset="utf-8" />
+
+</head>
+<body>
+	<script>
+    document.write(`<h1>${navigator.userAgent}</h1>`);
+    var ua=navigator.userAgent;
+    var browser,version;
+    //只能靠蒙：
+    //如果userAgent中有MSIE，说明一定是IE浏览器
+    if(ua.indexOf("MSIE")!=-1){
+      browser="IE";
+    }else if(ua.indexOf("Trident")!=-1){
+      //如果ua中没有MSIE，但是有Trident,说明一定是IE浏览器
+      browser="Firefox";
+    }else if(ua.indexOf("Firefox")!=-1){
+      //如果ua中有Firefox，说明一定是Firefox浏览器
+      browser="Firefox";
+    }else if(ua.indexOf("OPR")!=-1){
+      //如果ua中有OPR，说明一定是OPR浏览器
+      browser="OPR";
+    }else if(ua.indexOf("Edge")!=-1){
+      //如果ua中有Edge，说明一定是Edge浏览器
+      browser="Edge";
+    }else if(ua.indexOf("Chrome")!=-1){
+      //如果ua中有Chrome，说明一定是Chrome浏览器
+      browser="Chrome";
+    }else if(ua.indexOf("Safari")!=-1){
+      //如果ua中有Safari，说明一定是Safari浏览器
+      browser="Safari";
+    }
+    console.log(`<h1>${browser}</h1>`);
+
+    //识别版本号：
+    if(version===undefined){//如果不是IE 11,才有必要继续是被版本号
+      //先找浏览器名称在ua中的位置i
+      var i=ua.indexOf(browser);
+      //i+浏览器名称的长度+1
+      i+=browser.length+1;
+      //在ua中从i位置开始，截取后3个字符，转为浮点数，保存在version中
+      version=parseFloat(ua.slice(i,i+3));
+      document.write(version);
+    }
+  </script>
+</body>
+</html>

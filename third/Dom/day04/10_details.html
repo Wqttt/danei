@@ -1,0 +1,17 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+<title>事件处理</title>
+<meta charset="utf-8" />
+
+</head>
+<body>
+  <script>
+    document.write(location.search+"<br>");
+    var search=location.search;
+    var arr=search.split("=");
+    var lid=arr[1];
+    document.write(`查看${lid}号商品的详细信息`);
+  </script>
+</body>
+</html>

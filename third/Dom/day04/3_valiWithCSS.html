@@ -1,0 +1,117 @@
+<!doctype html>
+<html>
+ <head>
+	<meta charset="UTF-8">
+	<title>实现带样式的表单验证</title>
+	<link rel="Stylesheet" href="css/1.css" />
+ </head>
+ <body>
+<form id="form1">
+	<h2>增加管理员</h2>
+	<table>
+		<tr>
+			<td>姓名：</td>
+			<td>
+				<input name="username"/>
+				<span>*</span>
+			</td>
+			<td>
+				<div class="vali_info">
+					10个字符以内的字母、数字或下划线的组合
+				</div>
+			</td>
+		</tr>
+		<tr>
+			<td>密码：</td>
+			<td>
+				<input type="password" name="pwd"/>
+				<span>*</span>
+			</td>
+			<td>
+				<div class="vali_info">6位数字</div>
+			</td>
+		</tr>
+		<tr>
+			<td></td>
+			<td colspan="2">
+				<input type="button" value="保存"/>
+				<input type="reset" value="重填"/>
+			</td>
+		</tr>				
+		</table>
+</form>
+<script>
+/*当文本框获得焦点时，清除文本框旁边的div的class*/
+//1. 查找触发事件的元素
+//先找到表单对象
+var form=document.forms[0];
+var txtName=form.username;
+					//form.elements["username"];
+var txtPwd=form.pwd;
+					//form.elements["pwd"];
+//2. 绑定事件处理函数
+txtName.onfocus=
+txtPwd.onfocus=function(){
+	//3. 查找要修改的元素
+	//找当前txt的爹的下一个兄弟的唯一一个孩子div
+	var div=this.parentNode //td
+							.nextElementSibling //下一个td
+							.children[0] //div
+	//4. 修改元素
+	div.className="";
+}
+
+//让姓名文本框自动获得焦点——必须放在onfocus后
+txtName.focus();
+
+/*文本框失去焦点，验证当前文本框的内容，修改提示信息的样式*/
+//为姓名文本框绑定失去焦点事件
+txtName.onblur=function(){
+	//定义正则表达式
+	var reg=/^\w{1,10}$/;
+	//this->txtName
+	//调用公共的验证方法vali
+	vali.call( this ,reg);
+}           //  |   ↓
+function vali(/*|*/reg){
+	//            ↓
+	//this -> window->call->txtName
+	//查找当前文本框旁边的div
+	var div=this.parentNode //td
+							.nextElementSibling //下一个td
+							.children[0] //div
+	//如果正则验证文本框的内容通过
+	if(reg.test(this.value)==true){
+		//就修改div的className为vali_success
+		div.className="vali_success";
+		return true;
+	}else{//否则
+		//就修改div的className为vali_fail
+		div.className="vali_fail";
+		return false;
+	}
+}
+txtPwd.onblur=function(){
+	//定义正则表达式
+	var reg=/^\d{6}$/;
+	//this->txtPwd
+	//调用公共的验证方法vali
+	vali.call( this ,reg);
+}
+
+//找到整个表单中倒数第二个表单元素——提交按钮，为按钮绑定单击事件
+var btn=form.elements[form.length-2];
+//form.length<==>form.elements.length
+btn.onclick=function(){
+	//先验证姓名文本框:
+	var rName=vali.call( txtName ,/^\w{1,10}$/);
+	//再验证密码框:
+	var rPwd=vali.call( txtPwd ,/^\d{6}$/);
+	//如果所有表单元素都验证通过，才能提交
+	if(rName==true&&rPwd==true){
+		console.log("发送ajax请求，提交数据到服务器...")
+	}
+}
+</script>
+ </body>
+</html>

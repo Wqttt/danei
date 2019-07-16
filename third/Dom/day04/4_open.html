@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"/>
+	<title>打开新链接方式总结</title>
+</head>
+<body>
+	<a href="http://tmooc.cn" target="_self">在当前窗口打开，可后退</a><br>
+	<button id="btn1">在当前窗口打开，可后退(js)</button><br>
+	<hr>
+	<button id="btn2">在当前窗口打开，不可后退(js)</button><br>
+	<hr>
+	<a href="http://tmooc.cn" target="_blank">在新窗口打开，可打开多个</a><br>
+	<button id="btn3">在新窗口打开，可打开多个(js)</button><br>
+	<hr>
+	<a href="http://tmooc.cn" target="tmooc">在新窗口打开，只能打开一个</a><br>
+	<button id="btn4">在新窗口打开，只能打开一个(js)</button>
+	<button id="btn5">把刚刚打开的页面关闭(js)</button><br>
+	<hr>
+	<script>
+		btn2.onclick=function(){
+			location.replace("http://www.tmooc.cn")
+		}
+		btn5.onclick=function(){
+			pop.close();
+		}
+		var pop;
+		btn4.onclick=function(){
+			pop=open("http://www.tmooc.cn","tmooc")
+			//open其实是有返回值的
+				//返回的是新窗口的window对象
+				//用新窗口的window对象，可对新窗口做多遥控操作！
+		}
+		btn3.onclick=function(){
+			open("http://www.tmooc.cn","_blank")
+		}
+		btn1.onclick=function(){
+			//open("http://tmooc.cn","_self")
+			//location.href="http://tmooc.cn"
+			//location.assign("http://tmooc.cn")
+			location="http://tmooc.cn"
+		}
+	/*
+	打开新链接方式总结：
+	1. 在当前窗口打开，可后退
+	2. 在当前窗口打开，不可后退
+	3. 在新窗口打开，可打开多个
+	4. 在新窗口打开，只能打开一个
+	*/
+
+	//5秒后自动关闭页面
+	/*
+		setTimeout(function(){
+			close();
+		},5000);
+	*/
+	</script>
+</body>
+</html>
