@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+<script>
+  //1. 用外层函数包裹受保护的变量和内层函数——充当父母
+  function parent(){
+    var total=1000;
+    //2. 外层函数将内层函数返回到外层函数的外部
+    return function(money){
+      total-=money;
+      console.log(`本次花了${money}元，还剩${total}元`)
+    }
+  }
+  //3. 调用外层父母函数，获得内层函数对象，再起一个名字
+  var pay=parent();
+  /*pay:function(money){
+      total-=money;
+      console.log(`本次花了${money}元，还剩${total}元`);
+    }
+  */
+  total=0;//此处的total不能够影响pay中的total
+  pay(100);
+  total=0;
+  pay(100);
+  total=0;
+  pay(100);
+  total=0;
+  pay(100);
+</script>
+</body>
+</html>

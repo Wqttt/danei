@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+<script>
+  (function fun(){
+    var starttime=new Date();
+    alert(`开始加载页面内容，at:${starttime.toLocaleString()}`);
+  })();
+  (function fun(){
+    var endtime=new Date();
+    alert(`界面内容加载完成，at:${endtime.toLocaleString()}`);
+  })();
+</script>
+<!-- <script>
+  var endtime=new Date();
+  alert(`界面内容加载完成，at:${endtime.toLocaleString()}`);
+</script> -->
+</body>
+</html>

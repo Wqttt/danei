@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+<script>
+  //如果父母函数只用一次
+  //则可用匿名函数
+  var pay=(function(){
+    var total=1000;
+    return function(money){
+            total-=money;
+            console.log(`本次花了${money}元，还剩${total}元`)
+          }
+  })();
+  console.dir(pay);
+  pay(100); //900
+  console.dir(pay);
+  pay(100); //800
+  console.dir(pay);
+  /*pay(100); //700
+  console.dir(pay);
+  pay(100); //600
+  console.dir(pay);*/
+/*
+  var pay=parent();
+  pay(100); //900
+  var pay=parent();
+  pay(100); //900
+  var pay=parent();
+  pay(100); //900
+  var pay=parent();
+  pay(100); //900
+*/
+</script>
+</body>
+</html>

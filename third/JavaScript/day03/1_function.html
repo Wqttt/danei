@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+<script>
+/*菜谱: 西红柿鸡蛋面
+材料: 西红柿  鸡蛋  面
+步骤: 
+  1. 炒鸡蛋
+  2. 炒西红柿
+  3. 把西红柿和鸡蛋一起炒
+  4. 煮面条
+  5. 把炒好的西红柿和鸡蛋放在面条上
+结果: 
+  一碗热腾腾的西红柿鸡蛋面
+*/
+function cook(cai,dan,mian){
+  console.log(`1. 炒${dan}`);
+  console.log(`2. 炒${cai}`);
+  console.log(`3. 把${cai}和${dan}一起炒`);
+  console.log(`4. 煮${mian}`);
+  console.log(`5. 把炒好的${cai}和${dan}放在${mian}上`);
+  return `一碗热腾腾的${cai}${dan}${mian}`
+}
+//周一: 
+var wan=cook("西红柿","鸡蛋","面");
+console.log(`得到: ${wan}`);
+//周二: 
+var wan=cook("黄瓜","卤蛋","粉丝");
+console.log(`得到: ${wan}`);
+</script>
+</body>
+</html>

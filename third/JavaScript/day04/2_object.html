@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+<script>
+/*一个学生: 
+  姓名: Li Lei
+  年龄: 11
+  会自我介绍: I'm Li Lei, I'm 11
+*/
+var lilei={
+  sname: "Li Lei",
+  sage: 11,
+  intr: function(){
+    console.log(this);
+    console.log(`I'm ${this.sname}, I'm ${this.sage}`)
+  }
+}
+console.log(lilei.sage);
+lilei.intr();
+//lilei.sage++;
+lilei["sage"]++;
+console.log(lilei.sage);
+console.log(lilei);
+lilei.intr();
+
+var fun=lilei.intr;//lilei将自己的intr函数的地址值给了全局变量fun。从此fun和lilei.intr共同引用同一个函数。
+  fun();//I'm undefined,I'm undefined，因为fun()调用时，前边没有.，如果没有.的一切都会
+
+</script>
+</body>
+</html>

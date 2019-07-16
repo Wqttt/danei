@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+<script>
+//先确定是不是考闭包
+//外层函数,局部变量,内层函数
+//2个问题: 
+//1. 妈妈生了几个孩子？
+//2. 包了几个红包？
+function fun(){
+  var n=999;
+  //因为nAdd不是形参，也没有var，所以肯定不是局部变量
+  //全局也没有一个变量叫nAdd
+  //记住: js中给一个不存在的变量强行赋值，结果自动在全局创建该变量。变量的值随着变量一起也到了全局。
+  nAdd=function(){ n++ };
+  return function(){
+    console.log(n)
+  }
+}
+var getN=fun();
+getN();//999
+nAdd();
+getN();//1000
+</script>
+</body>
+</html>

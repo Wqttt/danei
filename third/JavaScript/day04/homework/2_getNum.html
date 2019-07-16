@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+<script>
+  //1.外层函数包裹被保护的变量和内层函数——充当父母，为孩子保管压岁钱
+  function add(){
+    var i=1;
+    //2.外层函数将内层函数返回到外部，让外人可以使用
+    return function(){
+      console.log(i++);
+    }
+  }
+  //3.调用外层函数，获得返回的内层函数对象，保存在变量中反复使用
+  var getNum=add();
+  getNum();//1
+  getNum();//2
+  getNum();//3
+  getNum();//4
+  getNum();//5
+  getNum();//6
+  getNum();//7
+  getNum();//8
+  getNum();//9
+  getNum();//10
+</script>
+</body>
+</html>

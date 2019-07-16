@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+<script>
+var sname="     zhang   dong      ";
+/*//可以去掉字符串开头的空字符: l - left
+function ltrim(str){
+//其实就是将字符串开头的空字符替换为""
+  return str.replace(/^\s+/,"")
+}
+//可以去掉字符串结尾的空字符: r-right
+function rtrim(str){
+  return str.replace(/\s+$/,"")
+}
+//同时去掉开头和结尾的空字符
+function trim(str){
+  return str.replace(/^\s+|\s+$/g,"")
+}
+console.log(ltrim(sname));
+//"zhang   dong      "
+console.log(rtrim(sname));
+//"     zhang   dong"
+console.log(trim(sname));
+//"zhang   dong"*/
+
+var sname="     zhang   dong      ";
+//先用trim()函数去掉sname字符串开头和结尾的空字符，再打印出来。
+console.log(sname.trim());
+</script>
+</body>
+</html>

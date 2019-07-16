@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+<script>
+/*定义所有学生的统一结构:
+  //每个学生都有学生姓名: 
+  //每个学生都有学生年龄:
+  //每个学生都会自我介绍: 
+*/
+function Student(sname,sage){
+  this.sname=sname;
+  this.sage=sage;
+  this.intr=function(){
+    console.log(`我是 ${this.sname}, 我今年 ${this.sage} 岁`)
+  }
+}
+//反复创建两个学生对象: lilei和hmm
+var lilei=new Student("Li Lei",11);
+var hmm=new Student("Han Meimei",12);
+var lily=new Student("Lily",11);
+console.log(lilei);
+console.log(hmm);
+console.log(lily);
+lilei.intr();
+hmm.intr();
+lily.intr();
+</script>
+</body>
+</html>
