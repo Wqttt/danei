@@ -5,28 +5,35 @@
   <title></title>
 </head>
 <body>
-  <h1>jQuery/$工厂函数</h1>
-  <button id="btn1">click me(0)</button>
-  <script src="js/jquery-1.11.3.js"></script>
-  <script>
-    console.dir(jQuery);
-    //1.查找触发事件的元素
-    //document.getElementById("btn1")
-    $("#btn1")
-    //2.绑定事件处理函数
-    //.onclick=function(){
-    .click(function(){
-      //3.查找要修改的元素
-      var btn=$(this);
-      //4.修改元素
-      var n=parseInt(
-        //btn.innerHTML.slice(9,-1)
-        btn.html().slice(9,-1)
-      );
-      //btn.innerHTML=`click me(${++n})`
-      btn.html(`click me(${++n})`)
-    })
-    //}  
-  </script>
+<h1>jQuery/$工厂函数</h1>
+<button id="btn1">click me(0)</button>
+<!--                       9
+                            -1      -->
+<script src="js/jquery-1.11.3.js"></script>
+<script>
+console.dir(jQuery);
+//1. 查找触发事件的元素
+//document.getElementById("btn1")
+var $btn1=$("#btn1");//用选择器查找DOM元素，封装进新创建的jQuery对象中
+console.log($btn1)
+//2. 绑定事件处理函数
+//.onclick=function(){
+// 翻译 ↑
+$btn1.click(function(){
+  //3. 查找要修改的元素
+  //var btn=this; //因为this指的是触发事件的DOM元素，不能用jQuery家的简化版函数。
+  //于是，就可用$()将this，包装为一个新的jQuery对象
+  var $btn=$(this);
+  console.log($btn);
+  //4. 修改元素
+  var n=parseInt(
+    //btn.innerHTML.slice(9,-1)
+    $btn.html().slice(9,-1)
+  );
+  //btn.innerHTML=`click me(${++n})`
+  $btn.html(`click me(${++n})`)
+//}
+})
+</script>
 </body>
 </html>
