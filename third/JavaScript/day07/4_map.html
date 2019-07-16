@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+<script>
+  var arr1=[1,2,3,4,5];
+  var evens=arr1.map(
+    //var newArray=[];
+    //for(var i=0;i<arr1.length;i++){}
+    function(elem){
+      return elem*2;
+    }
+    //newArr[i]=return 新值
+    //return newArr
+  )
+  console.log(arr1);//1,2,3,4,5;
+  console.log(evens);//2,4,6,8,10
+</script>
+</body>
+</html>

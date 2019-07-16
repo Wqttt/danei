@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+<script>
+  //判断哪个数组是升序排列
+  var arr1=[1,2,3,4,5];
+  var arr2=[2,4,6,4,2];
+  //每个元素值，都<=下一个位置的元素值
+  console.log(
+    arr1.every(
+      function(elem,i,arr){
+        //console.log(this);//this指向window
+        return i<arr.length-1?elem<=arr[i+1]:true;
+      }
+    ),
+    arr2.every(
+      function(elem,i,arr){
+        return i<arr.length-1?elem<=arr[i+1]:true;
+      }
+    )
+  );
+  console.log(0.1+0.5)
+  console.log(0.1+0.2);
+</script>
+</body>
+</html>

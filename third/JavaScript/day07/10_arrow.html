@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+<script>
+  var lilei={//不是墙
+    sname:"Li Lei",
+    friends:["亮亮","然然","东东","燕儿"],
+    //ES6中对对象中的方法提供了专门的简写！但不是箭头函数！而是写省略":function"
+    //vs 箭头函数：
+    //箭头函数内外this一致
+    //省略:function,只是单纯的简写，不改变原有的this!
+    intr:function(){//:function()
+      //this->lilei
+      this.friends.forEach(
+        function(elem){
+          //this->lilei
+          console.log(`${this.sname}认识${elem}`)
+        }.bind(this)
+        //Li Lei 认识 亮亮
+        //Li Lei 认识 然然
+        //Li Lei 认识 东东
+        //Li Lei 认识 燕儿
+      )
+    }
+  }
+  lilei.intr();//intr()中的this指的是lilei
+</script>
+</body>
+</html>

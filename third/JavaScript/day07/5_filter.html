@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+<script>
+  var arr=[1,2,3,4,5];
+  var evens=arr.filter(
+    //var newArr=[];
+    //for(...)
+    function(elem){
+      return elem%2==0;
+    }
+    //只有符合条件的元素才会被push到newArr中
+    //return newArr;
+  )
+  console.log(arr);
+  console.log(evens);
+</script>
+</body>
+</html>

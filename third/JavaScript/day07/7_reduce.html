@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+<script>
+  //统计一个字符串中每个字符出现的个数
+  var str="helloworld";
+  //将字符串打散为字符数组
+  var arr=str.split("");
+  console.log(arr);
+  var result=arr.reduce(
+    function(prev,elem){
+      //如果prev中没有elem表示的字母，就强行添加该字母，值标记为1
+      //prev[elem]===undefined?(prev[elem]=1):(prev[elem]++);
+      if(prev[elem]===undefined){
+        prev[elem]=1;
+      }else{
+        //否则如果prev中已经有了elem表示的字母，就将当前prev中elem字母的数量+1
+        prev[elem]++;
+      }
+      return prev;
+    },
+    {}
+  )
+  console.log(result);
+</script>
+</body>
+</html>

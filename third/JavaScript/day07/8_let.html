@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+<script>
+  console.log(a);//undefined
+  var a=10;
+  console.log(a);//10
+
+  // console.log(a);//报错禁止访问
+  // let a=10;
+  // console.log(a);//10
+
+//(function(){}
+  let t=0;//用于累加每个任务的执行时间
+  console.log(window.t);//0
+  function task1(){
+    console.log(`任务1耗时3s`);
+    t+=3;
+  }
+  function task2(){
+    //从此，函数中所有用t的地方，和全局再无关系！
+    console.log(`任务2耗时5s`);
+    t+=5;
+    
+    //如果有错误，就显示错误发生的时间
+    var err=true;//true显示错误时间
+    if(err==true){//条件不成立，没执行
+    //(function(){
+      let t=new Date();
+      console.log(`出错啦！at:${t.toLocaleString()}`);
+    //})()
+    }
+  }
+  task1();
+  task2();
+  console.log(`共耗时${t}s`);
+//})()
+</script>
+</body>
+</html>

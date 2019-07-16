@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+<script>
+  var arr=[12,3,123,1,23,2];
+  // arr.sort((a,b)=>a-b)
+  arr.sort(function(a,b){
+    return a-b;
+  })
+  console.log(arr);
+
+  var str="you can you up！";
+  // str=str.replace(/\b[a-z]/g,kword=>kword.toUpperCase())
+  str=str.replace(/\b[a-z]/g,function(kword){
+    return kword.toUpperCase();
+  })
+  console.log(str);
+
+  var arr=[1,2,3,4];
+  // arr.forEach((elem,i,arr)=>arr[i]=elem*2)
+  arr.forEach(function(elem,i,arr){
+    arr[i]=elem*2;
+  })
+  console.log(arr);
+
+  var arr=[1,2,3,4,5];
+  // var evens=arr.filter((elem)=>elem%2==0)
+  var evens=arr.filter(function(elem){
+    return elem%2==0;
+  })
+  console.log(evens);
+
+  // setTimeout(()=>alert("Boom!!!"),3000);
+  setTimeout(function(){
+    alert("BOOM!!");
+  },3000);
+
+  // (()=>console.log(`我是匿名函数自调！`))();
+  (function(){
+    console.log(`我是匿名函数自调！`);
+  })();
+</script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+<script>
+"use strict";
+//按值传递:当两个变量间赋值时或函数传参时，其实是将原数值复制一个副本给对方！
+//2种: 
+//  1. 如果传递的是原始类型的值：修改副本不影响原值！修改原值，也不影响副本。
+var a=3;
+var b=a;//复制副本 3
+b++;
+console.log(a);//3
+//  2. 如果传的是地址值，则任意一方通过地址修改对象，都会影响另一方。因为双方使用的是相同的地址引用的同一个对象。
+var a={x:1};
+var b=a;
+b.x++;
+console.log(a.x);//2
+
+var arr=[1,2,3,4,5];
+arr.forEach(
+//         [ 1 , 2 , 3 , 4 , 5 ]
+//         复制 复制 复制
+//           1   2   3
+            function(elem,i,arr){
+              //elem*=2
+              arr[i]=elem*2;
+              //arr[i]*=2;
+            }
+)
+console.log(arr);//2,4,6,8,10
+
+var arr=[{x:1},{x:2},{x:3},{x:4},{x:5}]
+arr.forEach(function(elem){
+  elem.x*=2;
+})
+console.log(arr);
+</script>
+</body>
+</html>
