@@ -1,0 +1,94 @@
+<!doctype html>
+<html>
+ <head>
+	<meta charset="UTF-8">
+	<title>实现带样式的表单验证</title>
+	<link rel="Stylesheet" href="css/5.css" />
+ </head>
+ <body>
+<form id="form1">
+	<h2>增加管理员</h2>
+	<table>
+		<tr>
+			<td>姓名：</td>
+			<td>
+				<input name="username"/>
+				<span>*</span>
+			</td>
+			<td>
+				<div class="vali_info">
+					10个字符以内的字母、数字或下划线的组合
+				</div>
+			</td>
+		</tr>
+		<tr>
+			<td>密码：</td>
+			<td>
+				<input type="password" name="pwd"/>
+				<span>*</span>
+			</td>
+			<td>
+				<div class="vali_info">6位数字</div>
+			</td>
+		</tr>
+		<tr>
+			<td></td>
+			<td colspan="2">
+				<input type="submit" value="保存"/>
+				<input type="reset" value="重填"/>
+			</td>
+		</tr>				
+		</table>
+</form>
+<script>
+/*当文本框获得焦点时，清除文本框旁边的div的class*/
+//1. 查找触发事件的元素
+var txtName=document.getElementsByName("username")[0];
+var txtPwd=document.getElementsByName("pwd")[0];
+//2. 绑定事件处理函数
+txtName.onfocus=
+txtPwd.onfocus=function(){
+	//3. 查找要修改的元素
+	//找当前txt的爹的下一个兄弟的唯一一个孩子div
+	var div=this.parentNode //td
+							.nextElementSibling //下一个td
+							.children[0] //div
+	//4. 修改元素
+	div.className="";
+}
+
+/*文本框失去焦点，验证当前文本框的内容，修改提示信息的样式*/
+//为姓名文本框绑定失去焦点事件
+txtName.onblur=function(){
+	//定义正则表达式
+	var reg=/^\w{1,10}$/;
+	//this->txtName
+	//调用公共的验证方法vali
+	vali.call( this ,reg);
+}           //  |   ↓
+function vali(/*|*/reg){
+	//            ↓
+	//this -> window->call->txtName
+	//查找当前文本框旁边的div
+	var div=this.parentNode //td
+							.nextElementSibling //下一个td
+							.children[0] //div
+	//如果正则验证文本框的内容通过
+	if(reg.test(this.value)==true){
+		//就修改div的className为vali_success
+		div.className="vali_success";
+	}else{//否则
+		//就修改div的className为vali_fail
+		div.className="vali_fail";
+	}
+}
+txtPwd.onblur=function(){
+	//定义正则表达式
+	var reg=/^\d{6}$/;
+	//this->txtPwd
+	//调用公共的验证方法vali
+	vali.call( this ,reg);
+}
+</script>
+ </body>
+</html>

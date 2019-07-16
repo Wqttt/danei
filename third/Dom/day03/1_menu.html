@@ -1,0 +1,94 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+<title>1. 实现伸缩二级菜单</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" href="css/1.css" />
+
+</head>
+<body>
+<ul class="tree">
+	<li>
+		<span class="open">考勤管理</span>
+		<ul>
+			<li>日常考勤</li>
+			<li>请假申请</li>
+			<li>加班/出差</li>
+		</ul>
+	</li>
+	<li>
+		<span>信息中心</span>
+		<ul>
+			<li>通知公告</li>
+			<li>公司新闻</li>
+		</ul>
+	</li>
+	<li>
+		<span>协同办公</span>
+		<ul>
+			<li>公文流转</li>
+			<li>文件中心</li>
+			<li>内部邮件</li>
+			<li>即时通信</li>
+			<li>短信提醒</li>
+		</ul>
+	</li>
+</ul>
+<script>
+//DOM 4步:
+//1. 查找触发事件的元素
+//2. 绑定事件处理函数
+	//3. 查找要修改的元素
+	//4. 修改元素
+
+//1. 先找到ul下所有span
+var spans=document.querySelectorAll(
+	"ul.tree>li>span"
+);
+//2. 为每个span绑定单击事件处理函数
+for(var span of spans){
+	//每点一个span
+	span.onclick=function(){
+		var span=this; //获得当前span
+		//如果当前span自己的class是open，说明自己是开着的
+		//<span class="open">
+		if(span.className=="open"){
+			//就清除自己的class="open"，把自己关上
+			span.className="";
+		}else{//否则,如果自己是关着的
+			//找到ul下其它现在class="open"的元素
+			var open=document.querySelector(
+				"ul.tree>li>span.open"
+			);
+			//如果找到open(open不是null)就先清除它的class="open"把它关上
+			open!==null&&(open.className="")
+			//然后，再给自己的span加class="open"把自己打开！
+			span.className="open";
+		}
+	}
+}
+/*
+//复习== vs ===
+//	==是带隐式转换的等于比较，null==undefined，返回true, 无法区分null和undefined
+//  ===是不带隐式转换的等于比较，不会自动转换
+//  null===undefined  返回false
+//所以，今后，只要判断null或undefined，都要===或!==，而不用==和!=。
+
+//复习逻辑运算中的隐式转换
+//open!==null&&(open.className="");
+//可简写为
+//open&&(open.className="");
+//因为&&是逻辑运算，逻辑运算中，自动转boolean类型
+//Boolean(open)
+//	如果open的值是 0, "", null, undefined, NaN之一时，转false
+//  只要不是上边这五个值，一律都转为true
+
+//复习短路逻辑
+alert(2||3)
+alert(0||3)
+alert(2&&3)
+alert(0&&3)
+*/
+</script>
+</body>
+</html>

@@ -1,0 +1,53 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+<title>读取并修改元素的属性</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" href="css/3.css" />
+<style></style>
+</head>
+<body>
+<h2>实现多标签页效果</h2>
+<div class="tabs">
+  <ul id="tab">
+    <li><a href="javascript:;" data-toggle="tab" data-target="content1">10元套餐</a></li>
+    <li><a href="javascript:;" data-toggle="tab" data-target="content2">30元套餐</a></li>
+    <li><a href="javascript:;" data-toggle="tab" data-target="content3">50元包月</a></li>
+  </ul>
+  <div id="container">
+    <div id="content1">
+      10元套餐详情：<br />&nbsp;每月套餐内拨打100分钟，超出部分2毛/分钟
+    </div>
+    <div id="content2">
+      30元套餐详情：<br />&nbsp;每月套餐内拨打300分钟，超出部分1.5毛/分钟
+    </div>
+    <div id="content3">
+      50元包月详情：<br />&nbsp;每月无限量随心打
+    </div>
+  </div>
+</div>
+<script>
+(function(){
+  //DOM 4步:
+  //1. 查找触发事件的元素
+  var as=document.querySelectorAll(
+    "#tab>li>[data-toggle=tab]"
+  );
+  //2. 绑定事件处理函数
+  var i=10;//累积zIndex
+  for(var a of as){
+    a.onclick=function(){
+      //3. 查找要修改的元素
+      //获得保存在a上的自定义扩展属性data-target中的id名
+      var id=this.getAttribute("data-target");
+          //this.dataset.target;
+      var div=
+        document.getElementById(id);
+      //4. 修改元素
+      div.style.zIndex=i++;
+    } 
+  }
+})();
+</script>
+</body>
+</html>

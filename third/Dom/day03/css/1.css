@@ -1,0 +1,25 @@
+li{
+	list-style:none;
+}
+li span{
+	padding-left: 20px;
+	cursor: pointer;
+  background: url("../images/add.png") no-repeat center left;
+}
+li ul{/*统一的起始高度*/
+	/* display: none; */
+	height:0px;
+	overflow:hidden;
+	transition:all .5s linear;
+}
+.open{ background: url("../images/minus.png") no-repeat center left; }
+/*当每个li下的span获得class="open"时高度的预案是多少*/
+li:nth-child(1)>span.open+ul{
+	height:62px;
+}
+li:nth-child(2)>span.open+ul{
+	height:42px;
+}
+li:nth-child(3)>span.open+ul{
+	height:104px;
+}

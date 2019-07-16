@@ -1,0 +1,89 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>全选和取消全选</title>
+</head>
+<body>
+<h2>管理员列表</h2>
+<table border="1px" width="500px">
+	<thead>
+	<tr>
+		<th><input type="checkbox"/>全选</th>
+		<th>管理员ID</th>
+		<th>姓名</th>
+		<th>操作</th>
+	</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td><input type="checkbox"/></td>
+			<td>1</td>
+			<td>Tester</td>
+			<td>修改 删除</td>
+		</tr>
+		<tr>
+			<td><input type="checkbox"/></td>
+			<td>2</td>
+			<td>Manager</td>
+			<td>修改 删除</td>
+		</tr>
+		<tr>
+			<td><input type="checkbox"/></td>
+			<td>3</td>
+			<td>Analyst</td>
+			<td>修改 删除</td>
+		</tr>
+		<tr>
+			<td><input type="checkbox"/></td>
+			<td>4</td>
+			<td>Admin</td>
+			<td>修改 删除</td>
+		</tr>
+	</tbody>
+</table>
+<button>删除选定</button>
+<script>
+(function(){
+	/*点全选，下方四个跟随全选和取消全选*/
+	//DOM 4步
+	//1. 查找触发事件的元素
+	var chbAll=document.querySelector(
+		"table>thead>tr input"
+	);
+	var chbs=document.querySelectorAll(
+		"table>tbody>tr input"
+	);
+	//2. 绑定事件处理函数
+	chbAll.onclick=function(){
+		var chbAll=this;
+		//3. 查找要修改的元素
+		
+		//4. 修改元素
+		for(var chb of chbs){
+			chb.checked=chbAll.checked;
+		}
+	}
+	/*点下边每个input，都可能影响上边的全选*/
+	for(var chb of chbs){
+		chb.onclick=function(){
+			var chb=this;
+			//如果当前点的input是取消选中，则上边的input不选中
+			if(chb.checked==false){
+				chbAll.checked=false;
+			}else{//否则如果当前点的input是选中，上边input不一定选中
+				//查找table下tbody下未选中的input
+				var unchecked=document.querySelector(
+					"table>tbody>tr input:not(:checked)"
+				)
+				//如果找不到未选中的，就说明都选中了！
+				if(unchecked===null){
+					chbAll.checked=true;//上边input才选中
+				}
+			}
+		}
+	}
+})()
+</script>
+</body>
+</html>

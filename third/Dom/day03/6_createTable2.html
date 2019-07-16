@@ -1,0 +1,58 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+<title>动态创建表格</title>
+<meta charset="utf-8" />
+<style>
+	table{width:600px; border-collapse:collapse;
+		text-align:center;
+	}
+	td,th{border:1px solid #ccc}
+</style>
+
+</head>
+<body>
+<div id="data">
+  <table>
+    <thead>
+      <tr>
+        <th>姓名</th>
+        <th>薪资</th>
+        <th>年龄</th>
+      </tr>
+    </thead>
+    <tbody>
+
+    </tbody>
+  </table>
+</div>
+<script>
+var json=[
+  {"ename":"Tom", "salary":11000, "age":25},
+  {"ename":"John", "salary":13000, "age":28},
+  {"ename":"Mary", "salary":12000, "age":25}
+];
+
+//先创建文档片段对象
+var frag=
+  document.createDocumentFragment()
+//遍历json数组中每个员工对象
+for(var emp of json){
+  //先创建一个tr，追加到frag末尾
+  var tr=document.createElement("tr");
+  frag.appendChild(tr);
+  //遍历当前员工对象中每个属性
+  for(var key in emp){
+    //每遍历一个属性就创建一个td，追加到tr末尾
+    var td=document.createElement("td");
+    tr.appendChild(td);
+    //设置td的内容为当前emp对象的当前key属性的值
+    td.innerHTML=emp[key];
+  }
+}
+//将frag追加到tbody下
+document.querySelector("table>tbody")
+        .appendChild(frag);
+</script>
+</body>
+</html>
