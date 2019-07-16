@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>01_dom</title>
+</head>
+<body>
+	登录名称：<input type="text" id="ulogin"/><br/>
+	电子邮箱：<input type="text" id="uemail"/><br/>
+	联系方式：<input type="text" id="utel"/><br/>
+	用户姓名：<input type="text" id="uname"/><br/>
+	用户性别：<input type="text" id="usex"/><br/>
+	<button onclick="insert()">添加</button>
+	<table border="1px" id="content">
+		<tr align="center">
+			<th>登录名称</th>
+			<th>电子邮箱</th>
+			<th>联系方式</th>
+			<th>用户姓名</th>
+			<th>用户性别</th>
+			<th>操作</th>
+		</tr>
+	</table>
+	<script>
+		function insert(){
+			var login=ulogin.value;
+			var email=uemail.value;
+			var tel=utel.value;
+			var name=uname.value;
+			var sex=usex.value;
+			if(!name){
+				name='null';
+			}
+			if(!sex){
+				sex="不详";
+			}
+			var html=`
+				<tr>
+					<td>${login}</td>
+					<td>${email}</td>
+					<td>${tel}</td>
+					<td>${name}</td>
+					<td>${sex}</td>
+					<td><a href="#">删除修改</a></td>
+				</tr>
+			`;
+			content.innerHTML+=html;
+		}	
+	</script>
+</body>
+</html>
