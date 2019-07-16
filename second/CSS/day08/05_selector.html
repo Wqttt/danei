@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>05_selector</title>
+		<style>
+			#d1>#d2 span{color:red;}/*100+100+1=201*/
+			#d1 .c2 .c3{color:green;}/*100+10+10=120*/
+			div #d2 .c3{color:blue;}/*1+100+10=111*/
+			#d1 #d2 #d3{color:pink;}/*100+100+100=300*/
+		</style>
+	</head>
+	<body>
+		<div class="c1" id="d1">
+			<p class="c2" id="d2">
+				<span class="c3" id="d3">
+					选择器权值的比较
+				</span>
+			</p>
+		</div>  
+	</body>
+</html>

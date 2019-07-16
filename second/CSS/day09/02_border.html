@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>02_border</title>
+		<style>
+			#d1{
+				width:200px;
+				height:200px;
+				/*边框简写方式*/
+				border-top:3px double #f00;
+				border-right:3px solid #0ff;
+				border-bottom:3px dashed #f0f;
+				border-left:3px dotted #00f;
+			/*background-color:#006699;
+				rgb(0,6*16^1+6*16^0,9*16^1+9*16^0)*/
+				background-color:rgba(0,102,153,0.5);
+			}
+			#d2{
+				width:0;
+				height:0;
+				border:20px solid #0ff;
+				border-top:20px solid #0ff;
+				border-right:20px solid #ff0;
+				border-bottom:20px solid #f0f;
+				border-left:20px solid #f00;
+			}
+			#d3{
+				width:200px;
+				height:200px;
+				border:20px solid #0ff;
+				border-top:20px solid #0ff;
+				border-right:20px solid #ff0;
+				border-bottom:20px solid #f0f;
+				border-left:20px solid #f00;
+			}
+			#d4{
+				width:40px;
+				height:40px;
+				border:20px solid transparent;
+			}
+			#d4 .dd{
+				width:0px;
+				height:0px;
+				border:20px solid transparent;
+				border-top:20px solid rgba(102,102,102,0.3);
+			}
+			#d5{
+				width:200px;
+				height:200px;
+				border-width:20px;
+				border-style:dotted;
+				border-color:#000;
+			}
+			#d6{
+				width:200px;
+				height:200px;
+				/*border:2px solid #f00;*/
+				background-color:#fa0;
+				/*圆角/倒角*/
+				border-radius:20px;
+				border-top-right-radius:30%;
+				border-top-left-radius:20%;
+				border-bottom-right-radius:10%;
+				border-bottom-left-radius:40%;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="d6"></div>
+		<br>
+		<hr>
+		<br>
+		<div id="d5"></div>
+		<br>
+		<hr>
+		<br>
+		<div id="d4">
+			<div class="dd"></div>
+		</div>
+		<br>
+		<hr>
+		<br>
+		<div id="d3"></div>
+		<br>
+		<hr>
+		<br>
+		<div id="d2"></div>
+		<br>
+		<hr>
+		<br>
+		<div id="d1"></div>  
+	</body>
+</html>

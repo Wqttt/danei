@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>03_ex</title>
+		<style>
+			#text1{
+				color:purple;
+				background-color:yellow;
+				font-style:italic;
+			}
+			h2{
+				color:red;
+				background-color:pink;
+			}
+			.font36{font-size:36px;}
+			.text-danger{color:red;}
+			.bg-success{background-color:yellow;}
+			div.font36{color:green;}/*元素选择器.类选择器*/
+			.font36.text-danger{background-color:purple;}/*.类选择器.类选择器*/
+		</style>
+	</head>
+	<body>
+		<p class="font36 text-danger bg-success">
+			Lorem
+		</p>
+		<div class="font36 text-danger bg-success">
+			Lorem
+		</div>
+		<h3 class="font36 text-danger bg-success">
+			Lorem
+		</h3>
+		<h2 id="text1">
+			h2标签，内容假文，id为text1
+			使用id选择器设置文本为紫色，背景黄色
+			字体为斜体font-style:italic，查看页面效果
+			再使用元素选择器，设置文本颜色为红色，背景pink,查看效果
+		</h2>
+	</body>
+</html>

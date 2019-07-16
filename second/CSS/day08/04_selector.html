@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>04_selector</title>
+		<style>
+			#d1{
+				color:red;
+				background-color:yellow;
+			}
+			body li a{color:red;}
+			div span{color:blue;}
+			div p span{color:purple;}
+			div>span{color:green;}
+			div p>span{color:red;}
+			#a1:link{color:red;}
+			#a1:visited{color:green;}
+			#a1:hover{color:blue;}
+			#a1:active{font-size:36px;}
+			input:focus{
+				background-color:pink;
+			}
+		</style>
+	</head>
+	<body>
+		<input type="text"><br>
+		<a id="a1" href="http://www.sina.com">伪类</a>
+		<div id="d2">
+			<span>这是div中的span</span>
+			<p>
+				这是div中的p
+				<span>这是div中的p中的span</span>
+			</p>
+		</div>
+		<br>
+		<hr>
+		<br>
+		<ul class="content">
+			<li><a href="#">大黄蜂</a></li>
+			<li><a href="#">五菱宏光</a></li>
+			<li><a href="#">F650</a></li>
+			<li><a href="#">兰博基尼</a></li>
+		</ul>	
+		<div id="d1">ID选择器</div>
+	</body>
+</html>

@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>02_css</title>
+		<link rel="stylesheet" href="my1.css">
+		<style>
+			p{
+				color:red;
+			}
+			body{
+				background-color:yellow;
+			}
+			h6{
+				color:green !important;
+			}
+			h6{
+				color:red;
+			}
+		</style>
+	</head>
+	<body>
+		<h6>优先级：就近原则</h6>
+		<p>
+			<span>这是p中的span</span>
+			<a href="#">这是p中的a</a>
+		</p>
+		<div>
+			这是div
+			<p>
+				这是div中的p标签
+				<span>这是div中p中的span</span>
+			</p>
+		</div>
+	</body>
+</html>
