@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+<script>
+  function fun(){
+    for(var i=0,arr=[];i<3;i++){
+      arr[i]=function(){ console.log(i) }//一个函数只定义不调用，是不执行的，内容有错也看不出来
+    }
+	  return arr;
+  }
+  var funs=fun();
+  funs[0]();//3
+  funs[1]();//3
+  funs[2]();//3
+</script>
+</body>
+</html>

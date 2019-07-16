@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+<script>
+  //斐波那契数列：
+  //1 1 2 3 5 8 13 21 34 55
+  //1 2 3 4 5 6 7  8  9  10
+  //计算第n个月
+  function fib(n){
+    //arguments.callee->fib
+    if(n<3){
+      return 1;
+    }else{
+      var box1=1,box2=1,box3;
+      for(var m=3;m<=n;m++){
+        //计算box3=box2+box1
+        box3=box1+box2;
+        //将box2给box1
+        box1=box2;
+        //将box3给box2
+        box2=box3;
+      }
+      return box3;
+      //1 + 1=2    m=3
+      //1 + 2=3    m=4
+      //2 + 3=5    m=5
+      //3 + 5=8    m=6
+      //5 + 8=13   m=7
+      //8 +13=21   m=8
+      //13+21=34   m=9
+      //21+34=55   m=10
+    }
+  }
+  console.log(fib(1000));
+</script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+<script>
+  function Student(sname,sage){
+    this.sname=sname;
+    this.sage=sage;
+  }
+  Student.prototype.intr=function(){
+    cosnole.log(`我是 ${this.sname},我今年 ${this.sage} 岁`);
+  }
+
+  var lilei=new Student("Li Lei",12);
+  var hmm=new Student("Han Meimei",11);
+  var lily=new Student("Lily",13);
+  console.log(lilei);
+  console.log(hmm);
+  console.log(lily);
+
+  /*新内容*/
+  //为所有同学在原型对象中添加统一的共有的班级名属性
+  Student.prototype.className="初一2班";
+
+  console.log(lilei.className,hmm.className,lily.className);
+  //自有属性，自己可以随便更改
+  lilei.sname="Li Xiaolei";
+  console.log(lilei);
+  console.log(hmm);
+  console.log(lily);
+  //过了一年，其他同学升级到初二2班，LiLei留级到小学6年级
+  //共有属性，如果用某一个子对象擅自修改，结果：
+  //原型中的共有属性不会被修改
+  //而是悄悄的给子对象添加一个自有的同名属性
+  //后果：从此，这个子对象和大家和父对象的同名属性再无关系
+  lilei.className="小学6年级";
+  //共有属性应该用原型对象同意修改，才能作用到所有同学上，且，日后变化，依然可以保持同步
+  Student.prototype.className="初二2班";
+  console.log(lilei.className,hmm.className,lily.className);
+</script>
+</body>
+</html>

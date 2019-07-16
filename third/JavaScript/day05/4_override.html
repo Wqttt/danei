@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+<script>
+  var arr=[1,2,3];
+  console.log(arr.toString());
+  var now=new Date();
+  console.log(now.toString());
+  var lilei={
+    sname:"Li Lei",
+    sage:12,
+    //觉得继承来的toString不好用，就在自己身上重写一个同名的toString方法
+    toString:function(){
+      return `{sname:${this.sname},sage:${this.sage}}`;
+    }
+    //极好的习惯：每个对象最好都重写toString()方法，便于调试
+  }
+  console.log(lilei.toString());
+
+  function Student(sname,sage){
+    this.sname=sname;
+    this.sage=sage;
+  }
+  //给所有学生类型家的孩子提供好用的toString方法()
+  Student.prototype.toString=function(){
+    return `{sname:${this.sname},sage:${this.sage}}`;
+  }
+  var hmm=new Student("Han Meimei",11);
+  var lily=new Student("Lily",13);
+  console.log(hmm.toString());
+  console.log(lily.toString());
+</script>
+</body>
+</html>

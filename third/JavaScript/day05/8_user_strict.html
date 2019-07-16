@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+<script>
+  "use strict";
+  var eric={
+    eid:1001,
+    ename:"埃里克"
+  }
+  //禁止修改员工eid——只读
+  Object.defineProperty(eric,"eid",{
+    writable:false
+  })
+  //试图修改只读的属性eid
+  //eric.eid=1002;
+  console.log(eric);
+</script>
+</body>
+</html>

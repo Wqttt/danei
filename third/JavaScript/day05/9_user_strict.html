@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+<script>
+  //"use strict";
+  function fun(sname,sage){
+    //this->undefined
+    this.sname=sname;
+    this.sage=sage;
+  }
+  fun("Li Lei",11);
+  //this->undefined
+  //var lilei=new fun("Li Lei",11);
+  //不会出错：new将this吸引到了刚创建的新对象上。this不再是undefined
+  //console.log(lilei);
+  //在全局作用域查找sname变量和sage变量竟然可以找到！说明内存泄漏了。
+  console.log(sname,sage);
+</script>
+</body>
+</html>
