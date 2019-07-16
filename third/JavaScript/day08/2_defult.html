@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+<script>
+  function indexOf(arr,elem,fromi=0){
+    //fromi=fromi||0;默认值的实现原理
+    console.log(`在${arr}中,从${fromi}位置开始，找下一个${elem}的位置i`);
+  }
+  var arr=[1,2,3,2,1];
+  indexOf(arr,2/*,0*/);
+  indexOf(arr,2,3);
+</script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+<script>
+  var output=[
+    {lid:1,title:"macbook",details:"i5 8g 128g"},
+    {lid:2,title:"macbook",details:"i5 16g 256g"},
+    {lid:3,title:"macbook",details:"i7 8g 128g"},
+    {lid:4,title:"macbook",details:"i7 16g 256g"},
+  ];
+
+  var [p1,,p3,,p5]=output;
+     //0  1
+  console.log(p1);
+  console.log(p3);
+  console.log(p5);//undefined 解构失败
+</script>
+</body>
+</html>

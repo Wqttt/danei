@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Promise_resolve</title>
+</head>
+<body>
+<script>
+  function liang(){
+    return new Promise(
+      function(resolve,reject){//赠了一个开门的开关
+        var bang="亮的接力棒!";
+        console.log(`亮拿着 ${bang}起跑！`);
+        setTimeout(function(){//异步 回调
+          if(Math.random()<0.3){
+            reject("啊！亮摔倒了！");
+          }else{
+            console.log(`亮拿着 ${bang}到达终点！`);
+            console.log("===亮开门===");
+            resolve(bang);
+          }
+          // door();//当自己的任务最后一句话执行完，再打开门，让下一个人开始跑
+          // //一开门，就自动触发提前用.then串联的下一个任务函数
+        },6000)
+      }
+    );
+  }//return new Promise
+  function ran(bang){
+    return new Promise(
+      function(resolve,reject){//赠了一个开门的开关
+        console.log(`然拿着 ${bang}起跑！`);
+        setTimeout(function(){//异步 回调
+          if(Math.random()<0.3){
+            reject("啊！然摔倒了！");
+          }else{
+            console.log(`然拿着 ${bang}到达终点！`);
+            console.log("===然开门===");
+            resolve(bang);
+          }
+          // door();//当自己的任务最后一句话执行完，再打开门，让下一个人开始跑
+          // //一开门，就自动触发提前用.then串联的下一个任务函数
+        },5000)
+      }
+    );
+  }//return new Promise
+  function dong(bang){
+    return new Promise(
+      function(resolve){//赠了一个开门的开关
+        console.log(`东拿着 ${bang}起跑！`);
+        setTimeout(function(){//异步 回调
+          console.log(`东拿着 ${bang}到达终点！`);
+          console.log("===东开门===");
+          resolve();
+          // door();//当自己的任务最后一句话执行完，再打开门，让下一个人开始跑
+          // //一开门，就自动触发提前用.then串联的下一个任务函数
+        },3000)
+      }
+    );
+  }//return new Promise
+
+  // liang().then(ran).then(dong).then(()=>console.log("比赛结束！"));
+
+  // liang()/*return new Promise*/.then(ran)/*return new Promise*/.then(dong)/*return new Promise*/.then(()=>console.log("比赛结束！")).catch(e=>console.log("不好啦！"+e));
+
+  (async function(){
+  try{
+    var bang=await liang();
+    bang=await ran(bang);
+    bang=await dong(bang);
+    console.log("比赛结束");
+  }catch(e){
+    console.log(`不好啦！${e}`);
+  }
+})()
+
+</script>
+</body>
+</html>

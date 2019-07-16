@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+<script>
+  var output={
+    product:{x:1,y:2,z:3},
+    pics:[
+      {pid:1,sm:"img/1.png",md:"img/1_md.png",lg:"img/1_lg.png"},
+      {pid:2,sm:"img/2.png",md:"img/2_md.png",lg:"img/2_lg.png"},
+      {pid:3,sm:"img/3.png",md:"img/3_md.png",lg:"img/3_lg.png"},
+      {pid:4,sm:"img/4.png",md:"img/4_md.png",lg:"img/4_lg.png"},
+    ],
+    specs:[
+      {lid:1,specs:"i5 8g 128g"},
+      {lid:2,specs:"i5 16g 256g"},
+      {lid:3,specs:"i7 8g 128g"},
+      {lid:4,specs:"i7 16g 256g"}
+    ],
+  }
+  console.log(output);
+  //var {product:product,pics:pics,specs:specs}=output;
+  //ES6的简写：对象中的属性名和其变量名如果同名，只需要写1个！
+  var {product,pics,specs}=output;
+  //这三个名字不能乱改！
+  //一个名字两用：即当配对儿的属性名，又当将来单独使用的变量名，所以，这个名字要和对象中现有的属性名保持一致！  
+  console.log(product);
+  console.log(pics);
+  console.log(specs);
+</script>
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Promise_door</title>
+</head>
+<body>
+<script>
+  function liang(){
+    return new Promise(
+      function(door){//赠了一个开门的开关
+        console.log(`亮起跑！`);
+        setTimeout(function(){//异步 回调
+          console.log(`亮到达终点！`);
+          console.log("===亮开门===");
+          door();//当自己的任务最后一句话执行完，再打开门，让下一个人开始跑
+          //一开门，就自动触发提前用.then串联的下一个任务函数
+        },10000)
+      }
+    );
+  }//return new Promise
+  function ran(){
+    return new Promise(
+      function(door){//赠了一个开门的开关
+        console.log(`然起跑！`);
+        setTimeout(function(){//异步 回调
+          console.log(`然到达终点！`);
+          console.log("===然开门===");
+          door();//当自己的任务最后一句话执行完，再打开门，让下一个人开始跑
+          //一开门，就自动触发提前用.then串联的下一个任务函数
+        },6000)
+      }
+    );
+  }//return new Promise
+  function dong(){
+    return new Promise(
+      function(door){//赠了一个开门的开关
+        console.log(`东起跑！`);
+        setTimeout(function(){//异步 回调
+          console.log(`东到达终点！`);
+          console.log("===东开门===");
+          door();//当自己的任务最后一句话执行完，再打开门，让下一个人开始跑
+          //一开门，就自动触发提前用.then串联的下一个任务函数
+        },3000)
+      }
+    );
+  }//return new Promise
+
+  // liang().then(ran).then(dong).then(()=>console.log("比赛结束！"));
+
+  liang()/*return new Promise*/.then(ran)/*return new Promise*/.then(dong)/*return new Promise*/.then(()=>console.log("比赛结束！"));
+
+</script>
+</body>
+</html>

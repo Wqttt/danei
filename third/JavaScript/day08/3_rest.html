@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+<script>
+  function calc(ename,...arr){
+    // var sum=0;
+    // for(va i=1;i<arguments.length;i++){
+    //   sum+=arguments[i];
+    // }
+    var sum=arr.reduce(    
+      (prev,elem)=>prev+elem,0
+    );
+    console.log(`${ename}的总工资是：${sum}`);
+  }
+  calc("lilei",10000,2000,2000,1000);
+  calc("hmm",10000,1000,2000);
+</script>
+</body>
+</html>

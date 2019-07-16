@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+<script>
+function liang(){
+  return new Promise(
+    function(resolve){
+      console.log(`亮起跑!`)
+      setTimeout(function(){
+        console.log(`亮到达终点!`);
+        console.log("===亮开门！===")
+        resolve(101);
+      },6000)
+    }
+  )
+}//return new Promise()
+function ran(){
+  return new Promise(
+    function(resolve){
+      console.log(`然起跑!`)
+      setTimeout(function(){
+        console.log(`然到达终点!`);
+        console.log("===然开门！===")
+        resolve(102);
+      },4000)
+    }
+  )
+}//return new Promise()
+function dong(){
+  return new Promise(
+    function(resolve){
+      console.log(`东起跑!`)
+      setTimeout(function(){
+        console.log(`东到达终点!`);
+        console.log("===东开门！===")
+        resolve(103);
+      },2000)
+    }
+  )
+}//return new Promise()
+
+Promise.all([
+  liang(),
+  ran(),
+  dong()
+]).then(arr=>{
+  console.log(arr);
+  console.log("比赛结束！")
+})
+
+</script>
+</body>
+</html>

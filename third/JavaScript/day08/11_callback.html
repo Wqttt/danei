@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>callback回调地狱</title>
+</head>
+<body>
+<script>
+  function liang(next){
+    console.log("亮起跑！");
+    setTimeout(function(){//异步 回调
+      console.log("亮到达终点！");
+      next();
+    },10000)
+  }
+  function ran(next){
+    console.log("然起跑！");
+    setTimeout(function(){//异步 回调
+      console.log("然到达终点！");
+      next();
+    },6000)
+  }
+  function dong(next){
+    console.log("东起跑！");
+    setTimeout(function(){//异步 回调
+      console.log("东到达终点！");
+      next();
+    },3000)
+  }
+  liang(//next
+    function(){//liang执行完自动调用
+      ran(
+        function(){//ran执行完自动调用
+          dong(
+            function(){//dong执行完自动调用
+              console.log("比赛结束！");
+            }
+          );
+        }
+      );
+    }
+  //等liang执行完自动执行next(0)
+  );
+</script>
+</body>
+</html>
