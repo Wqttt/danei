@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta charset="utf-8"/>
+  <title>...</title>
+  <script>
+  </script>
+ </head>
+  
+<body>
+  <button id="btnShoot">shoot</button><br>
+  <button id="btnAward">获得跟踪导弹</button><br>
+  <button id="btnBreak">失去跟踪导弹</button><br>
+<script>
+//先为按钮绑定一个发射普通子弹的处理函数
+btnShoot.onclick=function(){
+  console.log("发射普通子弹...");
+}
+//用数组集中保存多个处理函数对象
+var arr=[];
+//当单击获得奖励按钮时
+btnAward.onclick=function(){
+  //每打算添加一个新的处理函数时，都先保存到数组中。
+  arr.push(function(){
+    alert("发生跟踪导弹=>=>=>");
+  })
+  btnShoot.addEventListener(
+    //再从数组中取最后一个函数绑定
+    "click",arr[arr.length-1]
+  );
+}
+//当单击失去奖励按钮时
+btnBreak.onclick=function(){
+  //移除时，遍历数组中每个处理函数，移除匹配的每个监听对象
+  for(var f of arr){
+    //用原函数名，找到原函数对象，移除。
+    btnShoot.removeEventListener(
+      "click",f
+    )
+  }
+  arr=[];
+}
+</script>
+</body>
+</html>

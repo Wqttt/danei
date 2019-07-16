@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta charset="utf-8"/>
+  <title>...</title>
+  <script>
+  </script>
+ </head>
+  
+<body>
+  <button id="btnShoot">shoot</button><br>
+  <button id="btnAward">获得跟踪导弹</button><br>
+  <button id="btnBreak">失去跟踪导弹</button><br>
+<script>
+//先为按钮绑定一个发射普通子弹的处理函数
+btnShoot.onclick=function(){
+  console.log("发射普通子弹...");
+}
+//因为可能被移除，所以必须用有名称的函数绑定。因为移除时要求必须找到原函数才行。而只有通过函数名，才可以找到原函数对象的。
+function shoot2(){
+  alert("发生跟踪导弹=>=>=>");
+}
+//当单击获得奖励按钮时
+btnAward.onclick=function(){
+  //想为btnShoot按钮，多添加一种发射跟踪导弹的函数。希望再单击shoot按钮时，能同时发射2种子弹。
+  btnShoot.addEventListener(
+    //如果有可能被移除，就必须用有名称的函数的函数名绑定添加到事件监听对象中
+    "click",shoot2//不加()，因为不是立刻执行
+    //但是，用函数名绑定的处理函数，在一个元素的一个事件上，只能绑定一次，不能重复绑定。
+  );
+}
+//当单击失去奖励按钮时
+btnBreak.onclick=function(){
+  //用原函数名，找到原函数对象，移除。
+  btnShoot.removeEventListener(
+    "click",shoot2
+  )
+}
+</script>
+</body>
+</html>

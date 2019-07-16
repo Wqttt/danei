@@ -1,0 +1,59 @@
+﻿<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>取消与利用冒泡</title>
+		<meta charset="utf-8"/>
+	</head>
+<body>
+<div id="keys">
+	<span>*</span>
+	<button>1</button><span>*</span>
+	<button>2</button><span>*</span>
+	<button>3</button><span>*</span>
+	<button>4</button><span>*</span><br>
+	<button>C</button><span>*</span>
+	<button>+</button><span>*</span>
+	<button>-</button><span>*</span>
+	<button>=</button><span>*</span>
+</div>
+<textarea id="sc" style="resize:none;width:200px; height:50px;" readonly></textarea>
+<script>
+	keys.onclick=function(e){
+		//this->父元素keys
+		//换成e.target->目标元素
+		//且只有e.target是button时，才
+		if(e.target.nodeName=="BUTTON"){
+			//alert(`${e.target.innerHTML}疼!`);
+			/*接下来，计算器的正常流程...*/
+			//判断e.target的内容
+			switch(e.target.innerHTML){
+				//如果是C
+				case "C":
+					//就清除显示屏sc的内容
+					sc.value="";
+					break;
+				//如果是=
+				case "=":
+					//如果显示屏sc的内容不为空
+					if(sc.value!==""){
+						//才尝试
+						try{
+							//将显示屏sc的内容放入全局函数eval()中计算得到计算结果
+							sc.value=eval(sc.value);
+							//再将结果放回显示屏sc中
+						}catch(err){//一旦发生错误，就捕获错误
+							//并将错误信息显示到显示屏sc中
+							sc.value=err;
+						}
+					}
+						break;
+				//其余按钮
+					//将e.target的内容追加到显示屏sc的内容末尾
+				default:
+						sc.value+=e.target.innerHTML;
+			}
+		}
+	}
+</script>
+</body>
+</html>
