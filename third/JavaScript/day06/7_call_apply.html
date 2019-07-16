@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+<script>
+  //定义一个计算薪资的计算器函数
+      //底薪  奖金1  奖金2
+  function calc(base,bonus1,bonsu2){
+    console.log(`${this.ename}的总工资是${base+bonus1+bonsu2}`);
+  }
+  var lilei={ ename:"Li Lei" };
+  var hmm={ ename:"Han Meimei" };
+  var lily={ ename:"Lily" };
+  //lilei和hmm想临时借用一下公共的计算器
+  //lilei.calc(10000,1000,2000);错lilei.calc is not a function
+  //hmm.calc();错
+  calc.call(lilei,10000,1000,2000);
+  calc.call(hmm,200000,2000,3000);
+  var arr=[4000,5000,6000];
+  //calc.call(lily,arr);//4000,5000,6000undefinedundefined
+  calc.apply(lily,arr);
+</script>
+</body>
+</html>

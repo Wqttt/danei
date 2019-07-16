@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+<script>
+var arr1=[1,2,3,4,5];
+var arr2=[2,4,6,4,2];
+//判断哪个数组全是偶数
+console.log(
+  arr1.every(function(elem,i,arr){
+    console.log(`自动调用一次回调函数,收到:elem=${elem},i=${i},arr=${arr}`);
+    console.log(`本次调用返回:${elem%2==0}`);
+    return elem%2==0;
+  }),//false
+  arr2.every(function(elem,i,arr){
+    console.log(`自动调用一次回调函数,收到:elem=${elem},i=${i},arr=${arr}`);
+    console.log(`本次调用返回:${elem%2==0}`);
+    return elem%2==0;
+  }) //true
+)
+</script>
+</body>
+</html>

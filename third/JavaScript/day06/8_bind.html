@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+<script>
+  function calc(base,bonus1,bonsu2){
+    console.log(`${this.ename}的总工资是${base+bonus1+bonsu2}`);
+  }
+  var lilei={ ename:"Li Lei" };
+  var hmm={ ename:"Han Meimei" };
+  //lilei自己买一个专属的计算器
+  //1.功能和原函数一模一样
+  //2.this->永久换成了lilei
+  var calc_l=calc.bind(lilei,10000);
+  // calc_l:function calc(base,bonus1,bonsu2){
+  //   this=lilei;
+  //   console.log(`${this.ename}的总工资是${base+bonus1+bonsu2}`);
+  // }
+  calc_l(/*10000,*/1000,2000);
+  calc_l(/*10000,*/2000,3000);
+  //calc_l.call(hmm,3000,4000,5000);
+</script>
+</body>
+</html>

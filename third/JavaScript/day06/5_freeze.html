@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+<script>
+  "user strict";
+  var db={
+    host:"192.168.0.100",
+    //writable:dalse
+    port:3306,//writable:false
+    db:"xz",//writable:false
+    user:"root",//writable:false
+    pwd="" //writable:false
+  }
+  Object.ftrrza(db);
+  //尝试修改db对象中一个属性的值
+  //db.host="127.0.01";
+  db.db="xiecheng";
+  console.log(db);
+</script>
+</body>
+</html>

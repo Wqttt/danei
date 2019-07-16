@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+<script>
+  var eric={
+    eid:1002,
+    ename:"艾瑞克",
+    //eage:24  //年龄必须介于18~65之间
+  }
+  Object.defineProperties(eric,{
+    _eage:{//受保护的明星属性
+      value:26,
+      writable:true,//可以改
+      enumerable:false,//不可以随意遍历
+      configurable:false//不可删除
+    },
+    eage:{//请保镖冒名顶替保护明星属性_sage
+      get:function(){
+        console.log("自动调用eage保镖的get方法...");
+        return this._eage;
+      },
+      set:function(value){
+        console.log(`自动调用eage保镖的set方法,自动接收${value}...`);
+        if(value>=18&&value<=65){
+          this.eage=value;
+        }else{
+          throw Error("年龄超出范围！");
+        }
+      },
+      configurable:false,
+      enumerable:true
+    }
+  })
+  console.log(eric);
+  //试图获取eric的年龄eage时
+  console.log(eric.eage);
+  //试图修改eric的年龄eage时,自动调用保镖的set方法
+  eric.eage=26;
+  console.log(eric);
+  eric.eage=-2;
+  console.log(eric);
+</script>
+</body>
+</html>

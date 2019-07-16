@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+<script>
+  var str="hello world";
+        // 012345678910
+  //index(item,start)
+  console.log(
+    str.indexOf("o"),//4
+    str.indexOf("o",5),//7
+    str.indexOf("o",8),//-1
+    str.indexOf("狗蛋")//-1
+  );
+  var arr=[1,2,3,4,5,4,3,2,1];
+        // 0 1 2 3 4 5 6 7 8
+  console.log(
+    arr.indexOf(3),//2
+    arr.indexOf(3,3),//6
+    arr.indexOf(3,7),//-1
+    arr.indexOf(10)//-1
+  );
+</script>
+</body>
+</html>
