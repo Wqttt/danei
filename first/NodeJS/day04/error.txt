@@ -1,0 +1,8 @@
+1.多次使用了send
+Error:Can't set headers after they are sent.
+2.mysql的用户名或者密码错误
+Error：ER_ACCESS_DENIED_ERROR:Access denied for user 'root'@'localhost' (using password:YES)
+3.nodejs版本比较高
+DeprecationWarning:
+4.mysql没有启动
+Error:connect ECONNEREFUSED 127.0.0.1:3306
