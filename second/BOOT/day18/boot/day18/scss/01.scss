@@ -1,0 +1,52 @@
+#main{
+  width:200px;height:200px;
+  background: #f00;
+  transition: {property: all;duration: 2s;timing-function: linear};
+  &:hover{
+    background:#ff0;
+    border-radius: 50%;
+  }
+}
+
+div{
+  border:{style: solid;width:10px;color:#ff0;}
+}
+
+div,h2,p{
+  a{color:#f00;}
+}
+
+a{
+  text-decoration:none;
+  &:hover{background:#f00;}
+}
+
+#content{
+  color:red;
+  h1{font-size:12px;}
+  p{background:#00f;
+    button{outline:0;}
+  }
+}
+
+
+
+
+//$jd_red:#f10215;
+$my_min-width:100px;
+$before-content:"子曾经曰";
+$my-border-style:solid;
+$my_border:1px solid #f01;
+$jd_red:#f00 !default;
+div{
+  color:$jd_red;
+  background: #000;
+  border:$my_border;
+  border:1px $my-border-style $jd_red;
+  $my-width:$my_min-width;
+  width:$my-width;
+}
+#d1{
+
+}
+

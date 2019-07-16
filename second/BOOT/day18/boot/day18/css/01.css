@@ -1,0 +1,40 @@
+#main {
+  width: 200px;
+  height: 200px;
+  background: #f00;
+  transition-property: all;
+  transition-duration: 2s;
+  transition-timing-function: linear; }
+#main:hover {
+    background: #ff0;
+    border-radius: 50%;
+}
+
+div {
+  border-style: solid;
+  border-width: 10px;
+  border-color: #ff0; }
+
+div a, h2 a, p a {
+  color: #f00; }
+
+a {
+  text-decoration: none; }
+  a:hover {
+    background: #f00; }
+
+#content {
+  color: red; }
+  #content h1 {
+    font-size: 12px; }
+  #content p {
+    background: #00f; }
+    #content p button {
+      outline: 0; }
+
+div {
+  color: #f00;
+  background: #000;
+  border: 1px solid #f01;
+  border: 1px solid #f00;
+  width: 100px; }
