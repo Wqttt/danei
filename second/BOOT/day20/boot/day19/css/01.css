@@ -1,0 +1,53 @@
+@charset "UTF-8";
+h2 {
+  color: #0ff; }
+
+div {
+  width: 30px; }
+
+div:before {
+  content: "ABC"; }
+
+div {
+  width: 210px; }
+
+p {
+  width: 5px;
+  color: rgba(11, 22, 33, 0.6);
+  /*h:色调，s:饱和度 0%~100%   L:亮度 0%~100%*/
+  background: #40bfbf; }
+
+p:after {
+  width: 97px;
+  height: 108.66667px;
+  color: #335577;
+  background: rgba(50, 70, 90, 0.6);
+  content: "liangliang ate 250  baozis";
+  font-size: 10px/5px;
+  width: 500px;
+  height: 250px;
+  margin: 9px; }
+
+div {
+  width: 90px; }
+
+p:after {
+  content: "Microsoftyahei";
+  font-family: Arial; }
+
+.my-bottom-border, .my-bottom-shadow {
+  border: 2px solid #ff0;
+  border-radius: 50%;
+  box-shadow: 0 0; }
+
+.my-bottom-shadow {
+  border-color: #f00; }
+  .my-bottom-shadow:hover {
+    border-color: #00f; }
+
+.parent, .child {
+  border: 1px solid #f00;
+  border-radius: 50%; }
+
+.child {
+  box-shadow: 0 1px 10px; }

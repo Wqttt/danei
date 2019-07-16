@@ -1,0 +1,24 @@
+@mixin my_bg($color1,$color2){
+  background: -webkit-linear-gradient(top,$color1,$color2);
+  background: -o-linear-gradient(top,$color1,$color2);
+  background: -moz-linear-gradient(top,$color1,$color2);
+  background: -ms-linear-gradient(top,$color1,$color2);
+}
+
+
+@mixin my_border($width,$color){
+  border:$width solid $color;
+  border-radius:50%;
+  box-shadow:1px 1px 1px 1px $color;
+}
+@import "mycolor";
+div{color:$jd_red;
+  @include my_border(10px,#f00);
+  @include my_bg();
+}
+
+h1{
+  width:100px;
+  @include my_border(2px,#00f);
+  @include my_bg();
+}

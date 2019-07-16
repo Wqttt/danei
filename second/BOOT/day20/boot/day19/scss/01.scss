@@ -1,0 +1,91 @@
+$type:moon;
+h2{
+    @if($type==sun){
+      color:#f00;
+    }@else if($type==moon){
+      color:#0ff;
+    }@else {
+      color:#0f0;
+    }
+
+}
+
+
+@function add($a,$b){
+  @return $a+$b;
+}
+div{
+  width:add(10px,20px);
+}
+
+div:before{
+  content:to_upper_case("abc");
+
+}
+
+
+
+@function get_mywidth($n){
+    $max_width:60px;
+    $min_width:10px;
+    @return $n*max($max_width,$min_width)+$n*min($max_width,$min_width);
+}
+div{width:get_mywidth(3)}
+p{
+  width:round(4.5px);
+  color:rgba(11,22,33,.6);
+  /*h:色调，s:饱和度 0%~100%   L:亮度 0%~100%*/
+  background:hsl(180,50%,50%);//#00f
+}
+
+p:after{
+  width:1px+1in;
+  height:2px + 8pt +1in;
+  color:#001122+#334455;
+  background:rgba(10,20,30,0.6)+rgba(40,50,60,0.6);
+  content:"liangliang ate #{200+50}  baozis";
+  font-size:10px/5px;
+  $width:1000px;
+  width: $width/2;
+  height: (500px/2);
+  margin: 5px+8px/2px;
+  
+}
+
+
+
+$my-width:100px;
+$min-width:10px;
+div{
+  width:$my-width - $min-width;
+}
+
+
+
+
+p:after{
+  content:"Microsoft"+yahei;
+  font-family: A+"rial";
+}
+
+
+
+.my-bottom-border{
+  border:2px solid #ff0;
+  border-radius: 50%;
+  box-shadow: 0 0;
+}
+.my-bottom-shadow{
+  @extend .my-bottom-border;
+  border-color: #f00;
+  &:hover{border-color: #00f;}
+}
+
+.parent{
+  border:1px solid #f00;
+  border-radius: 50%;
+}
+.child{
+  box-shadow: 0 1px 10px;
+  @extend .parent;//继承.parent的样式
+}

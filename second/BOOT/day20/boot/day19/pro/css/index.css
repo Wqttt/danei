@@ -1,0 +1,61 @@
+
+/*轮播的样式*/
+.carousel-control-prev,
+.carousel-control-next{
+    width:4%;height:20%;
+    top:40%;
+    background-color: rgba(0,0,0,.3);
+    border-radius: 4px;
+}
+.carousel-indicators li{
+    width:0.8rem;height:0.8rem;
+    background:#fff;
+    border-radius:50%;
+    maring-left:6px;
+    maring-right:6px;
+}
+.carousel-indicators li.active{
+    background:#0aa1ed;
+}
+.border-bottom{
+    border-width:3px !important;
+}
+.top_width{height:377px;}
+.bottom_width{height:235px;}
+.f_bg{background: #e8e8e8;}
+/*1L外边距溢出*/
+.f_bg.top_width::before{
+    content:"";
+    display: table;
+}
+.w-40{width:40%;}
+.font-price{font-size:1.5rem;}
+/*1L图片的位置  10:10~10:25休息*/
+@media (min-width: 992px) {
+    .my_f1_left_img{
+        margin-top:-200px;
+        margin-right: 20px;
+    }
+}
+@media (min-width: 768px) and (max-width: 991px) {
+    .my_f1_left_img{
+        margin-top:-200px;
+        margin-right: 20px;
+        width: 20rem;
+    }
+}
+@media (max-width: 767px) {
+    .my_f1_left_img{
+        margin-top:-200px;
+        margin-right: 20px;
+        width: 20rem;
+    }
+}
+.my_f1_left_img{transition:1s;}
+.my_f1_left_img:hover{transform: scale(1.1);}
+
+
+
+
+
+
