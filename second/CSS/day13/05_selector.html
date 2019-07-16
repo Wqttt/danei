@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>05_selector</title>
+		<style>
+			p{
+				background:#000;
+				font:32px chiller;
+				color:#f00;
+			}
+			/*匹配第一个字符*/
+			p:first-letter{color:#f0f;font-size:50px;}
+			p:first-line{color:#0f0;}
+			p::selection{color:#ff0;background:#f00;}
+		</style>
+	</head>
+	<body>
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda aliquid temporibus minima odit quos similique illo itaque beatae id in illum molestiae commodi adipisci doloremque vero quaerat nihil rerum dolorum.</p>  
+	</body>
+</html>

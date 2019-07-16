@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>06_产品块</title>
+		<style>
+			*{
+				margin:0;
+				padding:0;
+			}
+			#content{
+				width:609px;
+				height:377px;
+				background:#e8e8e8;
+				position:relative;
+				overflow:hidden;
+			}
+			#content>div{
+				width:245px;
+			  height:243px;
+				position:absolute;
+				top:55px;
+				left:65px;
+			}
+			.title{
+				font-size:30px;
+			}
+			.details{
+				color:#666;
+				font-size:12px;
+			}
+			.price{
+				font-size:24px;
+				color:#0aa1ed;
+				margin:25px 0;
+			}
+			.view{
+				width:130px;
+				height:40px;
+				border:0;
+				outline:0;
+				background-image:linear-gradient(to bottom,#27b1f6,#0aa1ed);
+				color:#fff;
+				font-size:16px;
+			}
+			#content>img{
+				position:absolute;
+				top:56px;
+				right:30px;
+				cursor:pointer;
+				transition:0.5s;
+			}
+			#content>img:hover{
+				transform:scale(1.1);
+			}
+		</style>
+	</head>
+	<body>
+		<div id="content">
+			<div>
+				<h1 class="title">Apple MacBook Air系列</h1>
+				<p class="details">酷睿双核i5处理器|256GB SSD|8GB内存|英特尔HD显卡620含共享显卡内存</p>
+				<p class="price">￥6988.00</p>
+				<button class="view">查看详情</button>
+			</div>
+			<img src="img/study_computer_img1.png" alt="">
+		</div>  
+	</body>
+</html>

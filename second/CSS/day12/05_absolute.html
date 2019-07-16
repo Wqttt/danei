@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>05_absolute</title>
+		<style>
+			*{
+				margin:0;
+				padding:0;
+			}
+			#d1{
+				width:600px;
+				height:600px;
+				background:#ff0;
+				margin:0px;
+				position:relative;
+				top:0px;
+				left:0px;
+			}
+			#d2{
+				width:400px;
+				height:400px;
+				background:#0ff;
+				position:relative;
+				top:0px;
+				left:0px;
+			}
+			#d3{
+				width:200px;
+				height:200px;
+				background:#f0f;
+				position:absolute;
+				top:0px;
+				left:0px;
+			}
+			#d4{
+				width:200px;
+				height:200px;
+				background:#fcc;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="d1">
+			<div id="d2">
+				<div id="d3">
+					<div id="d4"></div> 
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

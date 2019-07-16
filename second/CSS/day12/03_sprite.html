@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>03_sprite</title>
+		<style>
+			div{
+				width:100px;
+				height:100px;
+				float:left;
+				margin:10px 20px;
+				border:2px solid #f00;
+				background:url(img/sprite.jpg);
+			}
+			#d1{
+				background-position:-118px -3px;
+			}
+			#d2{
+				background-position:-354px -3px;
+			}
+			#d3{
+				background-position:-354px -134px;
+			}
+			div:hover{
+				/*改变光标*/
+				/*默认，箭头*/
+				/*cursor:default;*/
+				/*小手*/
+				/*cursor:pointer;*/
+				/*文本I*/
+				/*cursor:text;*/
+				/*等待*/
+				/*cursor:wait;*/
+				/*帮助*/
+				/*cursor:help;*/
+				/*八倍镜*/
+				cursor:crosshair;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="d1">
+		</div> 
+		<div id="d2">
+		</div> 
+		<div id="d3">
+		</div> 
+	</body>
+</html>

@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>07_flex</title>
+		<style>
+			#parent{
+				height:600px;
+				border:2px solid #f00;
+				display:flex;
+				text-align:right;
+				/*容器的属性*/
+				flex-direction:row;/*主轴方向*/
+				flex-wrap:wrap-reverse;/*换行并反转*/
+				/*上面两个的缩写*/
+				flex-flow:row nowrap;
+				/*项目在主轴上的对齐方式*/
+				justify-content:flex-start;
+				/*项目在交叉轴上的对齐方式*/
+				align-items:stretch;
+			}
+			#d1,#d2,#d3{
+				width:300px;
+				height:300px;
+				font-size:60px;
+			}
+			#d1{background:#ff0;order:2;
+/*				flex-grow:10;*/
+				flex-shrink:10;
+				align-self:flex-end;
+			}
+			#d2{background:#0ff;order:1;
+/*				flex-grow:1;*/
+				flex-shrink:1;
+				align-self:center;
+			}
+			#d3{background:#f0f;order:3;
+/*				flex-grow:30;*/
+				flex-shrink:30;
+				align-self:baseline;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="parent">
+			<div id="d1">1</div>
+			<div id="d2">2</div>
+			<div id="d3">3</div>
+		</div>
+	</body>
+</html>
