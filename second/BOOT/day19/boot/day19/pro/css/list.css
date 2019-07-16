@@ -1,0 +1,26 @@
+.my_bg_gray{
+    background:linear-gradient(to bottom,#f0f0f0,#e0e0e0);
+}
+.my_input_w{
+    width:10%;
+    outline:0px;
+    border:0px;
+}
+.page-item{
+    border-radius:0.25rem;
+    margin-left:0.25rem;
+}
+.page-link{
+    border-radius:0.25rem;
+}
+.my_btn_h{
+    height:1rem;
+    width:1rem;
+    line-height: 1rem;
+}
+.my_input_w1{
+    width:20%;
+}
+.list-group-item+.list-group-item{
+    border-top:1px dashed #666 !important;
+}
