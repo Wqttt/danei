@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>03_dom</title>
+</head>
+<body>
+	<!-- 1.获取input对象 -->
+	<!-- 2.通过对象获取input对象中的值 -->
+	<input id="inp1" type="text"/>
+	<div id="d1">新年快乐！</div>
+	<button onclick="show()">弹窗</button>
+	<script>
+		function show(){
+			//1.获取input对象，要求input必须有id
+			var text=document.getElementById("inp1");
+			//console.log(btn);
+			//2.通过对象获取input中值
+			//alert(btn.value);
+			//获取div对象
+			var div1=document.getElementById("d1");
+			console.log(div1.innerHTML);
+			div1.innerHTML=text.value;
+		}
+	</script>
+</body>
+</html>

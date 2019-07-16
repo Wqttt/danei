@@ -1,0 +1,132 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>03_ex</title>
+</head>
+<body>
+	<form action="">
+		<fieldset>
+			<legend>用户基本信息</legend>
+			<table>
+				<tr>
+					<td>用户名称：</td>
+					<td>
+						<input type="text" name="uname" placeholder="请输入您的用户名称">
+					</td>
+				</tr>
+				<tr>
+					<td>用户密码：</td>
+					<td>
+						<input type="password" name="upwd" value="123456">
+					</td>
+				</tr>
+				<tr>
+					<td>用户性别：</td>
+					<td>
+						<input type="radio" name="gender" value="1" checked id="man">
+						<label for="man">男</label>
+						<input type="radio" name="gender" value="0" id="woman">
+						<label for="woman">女</label>
+					</td>
+				</tr>
+			</table>
+		</fieldset>
+		<br>
+		<table>
+			<tr>
+				<td>用户爱好：</td>
+				<td>
+					<input type="checkbox" name="hobby[]" value="eat" id="eat">
+					<label for="eat">吃</label>
+					<input type="checkbox" name="hobby[]" value="drink" id="drink">
+					<label for="drink">喝</label>
+					<input type="checkbox" name="hobby[]" value="play" id="play">
+					<label for="paly">玩</label>
+					<input type="checkbox" name="hobby[]" value="wahaha" id="wahaha">
+					<label for="wahaha">乐</label>
+				</td>
+			</tr>
+			<tr>
+				<td>选择头像：</td>
+				<td>
+					<input type="file">
+				</td>
+			</tr>
+			<tr>
+				<td valign="bottom">自我介绍：</td>
+				<td>
+					<textarea name="" id="" cols="20" rows="5"></textarea>
+				</td>
+			</tr>
+			<tr>
+				<td valign="bottom">工作城市：</td>
+				<td>
+					<select name="area" size="3">
+						<option value="bj">北京</option>
+						<option value="sh" selected>上海</option>
+						<option value="sz">深圳</option>
+						<option value="yn">云南</option>
+					</select>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2">
+					<input type="submit" value="登录">
+					<input type="reset" value="重填">
+					<input type="button" value="普通按钮">
+				</td>
+			</tr>
+		</table>
+	</form>
+	<br>
+	<hr>
+	<br>
+	<h1>为控件分组</h1>
+	<form action="">
+		<fieldset>
+			<legend>用户登录</legend>
+			<input type="text"><br>
+			<input type="password">
+		</fieldset>
+		<input type="submit">
+	</form>
+	<br>
+	<hr>
+	<br>
+	<table>
+		<tr>
+			<td>
+				<h3>登录学子商城</h3>
+			</td>
+			<td align="right">
+				<h3><a href="#">新用户注册</a></h3>
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2">
+				<input type="text" name="uname" placeholder="请输入您的用户名">
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2">
+				<input type="password" name="upwd" placeholder="请输入您的密码">
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<input type="checkbox" name="login" id="login">
+				<label for="login">自动登录</label>
+			</td>
+			<td align="right">
+				<a href="#">忘记密码?</a>
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2" align="center">
+				<input type="submit" value="登录">
+			</td>
+		</tr>
+	</table>
+</body>
+</html>

@@ -1,0 +1,80 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>02_ex</title>
+</head>
+<body>
+	<form action="">
+		<table>
+			<tr>
+				<td>用户名：</td>
+				<td><input type="text" name="uname"></td>
+			</tr>
+			<tr>
+				<td>密码：</td>
+				<td><input type="password" name="upwd"></td>
+			</tr>
+			<tr>
+				<td>籍贯：</td>
+				<td>
+					<select name="place" size="1">
+						<option value="bj">北京</option>
+						<option value="yn">云南</option>
+						<option value="sh">上海</option>
+						<option value="gz">贵州</option>
+					</select>
+				</td>
+			</tr>
+			<tr>
+				<td>性别：</td>
+				<td>
+					<input type="radio" name="gender" value="1">男
+					<input type="radio" name="gender" value="0">女
+					<input type="radio" name="gender" value="-1" checked>不透露
+				</td>
+			</tr>
+			<tr>
+				<td>头像：</td>
+				<td>
+					<input type="file">
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2">愿意到以下城市工作：</td>
+			</tr>
+			<tr>
+				<td></td>
+				<td colspan="2">
+					<select name="area" size="5">
+						<option value="bj">北京</option>
+						<option value="sh">上海</option>
+						<option value="nj">南京</option>
+						<option value="sz" selected>深圳</option>
+					</select>
+				</td>
+			</tr>
+			<tr>
+				<td valign="top">留言：</td>
+				<td>
+					<textarea name="text" id="" cols="30" rows="8"></textarea>
+				</td>
+			</tr>
+			<tr>
+				<td>
+				</td>
+				<td>
+					<input type="submit" value="提交">
+					<input type="reset" value="清除">
+				</td>
+			</tr>
+			<tr>
+				<td></td>
+				<td>
+					<input type="checkbox" name="ys">不要公开我的信息
+				</td>
+			</tr>
+		</table>
+	</form>
+</body>
+</html>
