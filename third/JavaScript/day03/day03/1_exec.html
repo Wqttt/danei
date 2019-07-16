@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+<script>
+var str="老师:用小红 我的 朋友造句。小亮:小红是我的朋友。小然:朋友！小红是我的！";
+//把所有小字开头的人名都查找出来
+var reg=/小[\u4e00-\u9fa5]/g;
+
+
+do{//反复do
+  //查找敏感词
+  var arr=reg.exec(str);
+  //如果找到敏感词，才输出
+  if(arr!=null){
+    console.log("找到敏感词!");
+    console.log(arr);
+  }else{//否则(找不到)，就退出循环
+    console.log("找不到了，就退出！")
+    break;
+  }
+}while(true);
+//true 不使用循环条件控制退出，因为我也不知道循环几次！
+//而是在循环体内根据条件，用break随时可能退出循环。
+</script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+<script>
+
+
+
+function pay(   ){
+//arugments[      ].length
+  //如果调用时没有传入实参
+  if(arguments.length==0){
+    console.log("用手机支付...");
+  }else if(arguments.length==1){
+  //否则如果调用时传入一个钱数实参
+    console.log(`用现金支付,收您${arguments[0]}元`);
+  }else{//否则如果调用时传入卡号和密码两个实参
+    console.log(`从您卡号${arguments[0]},扣款成功！`);
+  }
+}
+
+pay();//手机支付
+pay(100);//现金支付
+pay("6225 1234","123456")//刷卡支付
+</script>
+</body>
+</html>
