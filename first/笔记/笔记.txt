@@ -1,0 +1,1163 @@
+快捷键：
+  win+D:显示/隐藏脑桌面
+  win+E:打开资源管理器
+  win+R:打开运行窗口(cmd命令行/calc计算器/mspaint画图)
+  Ctrl+S:保存
+  Ctrl+C:复制
+  Ctrl+V:粘贴
+  Ctrl+X:剪切
+  Ctrl+Z:撤销当前操作
+  Ctrl+A:全选
+  Ctrl+F:查找
+  Ctrl+R:替换
+  Shift+回车:换行
+  Alt+F2:选择浏览器运行
+  Alt+Tab:切换当前窗口(向右)
+  Alt+Shift+Tab:切换窗口(向左)
+  F5:刷新
+  Ctrl+B:在浏览器中查看网页
+  Ctrl+Shift+N:新建模板网页
+  Alt+F4:关闭当前的窗口
+  Lorem:生成随机文本
+  Backspace:回到上一级
+在cmd中：
+  control+C:强制停止
+  cls:清零
+
+2019-4-29
+1.软件工程
+  程序设计阶段->软件设计阶段->软件工程阶段
+  软件工程：研究和应用如何系统性的、规范化的、
+  可定量的过程化方法去开发和维护软件
+  **软件过程/软件生命周期**
+  (1)软件定义期
+   1)可行性研究阶段--《可行性研究报告》
+     技术、人员、资金、时间、政策法规、风俗、回报率
+   2)需求分析阶段--《软件需求说明书》
+     功能性需求、非功能性需求
+  (2)软件开发期
+   3)概要设计阶段--架构师
+     技术选型、功能模块划分、数据结构设计
+   4)详细设计阶段--设计师
+     模块实现细节、属性、方法、算法
+   5)编码实现阶段
+     UI设计师--网页效果图
+     前端工程师--把网页效果图转化为HTML、css、js
+     后端工程师--提供项目中数据
+   6)软件测试阶段
+     软件测试工程师
+  (3)软件维护期
+   7)项目部署阶段
+     将项目部署到服务器
+   8)项目维护阶段
+2.学子商城功能型需求
+  前台：www.codeboy.com
+  后台：www.codeboy.com/admin/login.html
+  前台子系统/APP子系统：
+      商品模块：首页、搜索、列表、详情
+      用户模块：注册、登录、收藏夹、用户中心
+      购物车模块：加入购物车、修改购物车、下单
+  后台子系统
+      商品模块：添加、列表、删除、修改
+      用户模块：列表、删除、详情
+      订单模块: 列表、修改
+3.web项目中的服务器
+  Server:为客户端提供各种服务的功能强大的计算机
+  访问服务器
+    (1)服务器地址:域名/地址
+       查看域名对应的IP
+       ping www.codeboy.com
+    (2)对应的服务：端口号
+    (3)提供该服务所使用的协议
+4.访问自己电脑上的web服务器
+  启动web服务器  /WebServer/start.cmd
+  http://127.0.0.1:80 通过自己电脑的IP地址
+  http://localhost:80 通过自己电脑服务器的域名
+  获取自己电脑在局域网的IP地址
+  ipconfig 以太网适配器  以太网 ->IPv4
+  http://10.1.180.152:80 通过局域网的IP地址访问
+  
+  课后任务：
+  (1)复习今天的内容
+  (2)启动服务器，同桌之间使用局域网IP地址相互访问
+  (3)预习MySQL数据库
+
+2019-4-30
+复习：
+软件生命周期/软件过程
+    软件定义期
+        可行性研究阶段/需求分析阶段/详细设计阶段/编码实现阶段/
+	项目测试阶段
+    软件维护期
+        项目部署阶段/项目维护阶段 
+    服务器
+        域名/IP地址
+	端口号
+	协议
+
+1.数据的存储形式
+  内存/特定文件/第三方服务器/数据库服务器
+2.什么是数据库
+  数据库是按照一定的形式来组织、存储数据，目的是为了操作数据
+  --增删改查
+  (1)数据库发展历史
+     网状数据库->层次型数据库->关系数据库->非关系型数据库
+  (2)关系型数据库逻辑结构
+     Server(数据库服务器)->Database(数据库)->Table(数据表)->Row(行)->Cloumn(列)
+  (3)常见的关系型数据库
+     SQLite mysql sql server oracle
+     Linux/windows
+3.使用MySQL数据库
+  Mysql->sun->oracle  https://www.mysql.com/
+  Matin->MariaDB  https://www.mysql.com/
+  服务器套装——XAMPP
+  下载地址：https://www.apachefriends.org/download.html
+  (1)mysql部署结构
+     服务器端：负责存储/维护数据--银行总行机房
+         C:/xampp/mysql/bin/mysqld.exe  启动文件
+         确保端口3306不被占用
+     客户端：负责向数据库发起增删改查--ATM机
+         C:/xampp/mysql/bin/mysql.exe  客户端工具
+  (2)使用客户端连接服务器端
+     mysql.exe -h127.0.0.1 -P3306 -uroot
+     -h host 主机(IP地址/域名)
+     -P port 端口
+     -u user 用户名
+     -p password 密码
+     MySQL -uroot 简写形式
+4.MySQL常用得管理命令
+  show databases; 显示服务器上当前所有的数据库
+  quit 退出服务器的连接
+  use 数据库名;进入指定的数据库
+  show tables; 显示当前数据库中所有的数据表
+  desc 表名;描述表中都有哪些列(表头)
+  练习：进入数据库MySQL,查看有多少个数据表。
+  练习：进入到数据库xuezi,查看表users下有哪些列
+5.SQL命令
+  SQL:Structured Query Language,结构化查询语言,
+  用于操作关系型数据库服务器，对数据执行增删改查。
+  两种执行方式：
+      (1)交互模式:客户端输入一行，点击回车，服务器执行一行，
+      适用于临时性的查看数据。
+      (2)脚本模式:客户端把要执行的命令编写在一个脚本文件中，
+      一次性的提交给服务器执行，适用于批量的操作数据。
+      mysql -uroot<C:/User/UID/Desktop/邱婷/达内/正课/2019-4-30/01.sql
+      练习：编写脚本文件02.sql,查看所有的数据库，进入到xuezi数
+      据库，查看users下有哪些列
+  SQL语句规范：
+     (1)每条SQL命令必须以英文的分号作为结束，一条命令可以跨越
+     多行。
+     (2)假如某一条命令出现语法规范，则这条命令以及后边所有的
+     命令不会再执行。
+     (3)SQL不区分大小写，习惯上数据库关键字用大写，非关键字用
+     小写。
+     (4)SQL命令中可以使用单行注释(#...)和多行注释(/*...*/),
+     注释的内容不会被服务器执行。
+  ***常用得SQL命令：
+     (1)丢弃数据库，如果存在
+	DROP DATABASE IF EXISTS jd;
+     (2)创建新的数据库
+	CREATE DATABASE jd(数据库名称);
+     (3)进入jd数据库
+	USE jd;
+     (4)创建保存数据的表
+        CREATE TABLE student(
+            sid INT,#integer
+            name VARCHAR(16),#variable character
+            sex VARCHAR(1),
+            score INT
+        );
+     (5)向数据表中插入数据
+        INSERT INTO student VALUES('1','tom','M','82');
+     (6)查询数据
+        SELECT * FROM student;
+     (7)修改数据
+        UPDATE student SET sex='M',score='100' WHERE sid='2';
+     (8)删除数据
+        DELETE FROM student WHERE sid='3';
+     练习：编写脚本文件04_tedu.sql,先丢弃数据库tedu,如果存在；
+     再创建数据库tedu
+     练习：进入tedu数据库，创建保存员工数据的表emp,包含员工编号eid,姓名ename,地址addr,电话phone
+     练习：往数据表emp中插入5条数据，查询最终的结果。
+     练习：编写脚本文件05_dang.sql,先丢弃再创建数据库dang,进入该数据库，创建保存图书数据的表book,包含编号bid,标题title,价格price;插入数据，删除其中一条，修改其中1条，查询最终结果。
+     课后任务：
+       (1)复习内容
+       (2)练习：编写脚本文件xz.sql,先丢弃再创建数据库xz,进入该数据库，创建保存用户数据的表user,包含编号uid,用户名uname,密码upwd,邮箱email,电话phone,真实姓名userName,注册时间regTime，是否在线isOnline;插入数据，删除其中一条，修改其中1条，查询最终结果。
+      
+2019-5-5
+标准SQL语句分类
+DDL:Data Define Language 定义数据结构
+    CREATE/DROP/ALTER
+DML:Data Manipulate Language 操作数据
+    INSERT/UPDATE/DELETE
+DQL:Data Query Language 查询数据
+    SELECT
+DCL:Data Control Language 控制用户权限
+    GRANT(授权)/REVOKE(收权)
+
+1.计算机存储字符
+  (1)如何存储英文字符
+     ASCII:总共有128个，对所有的英文字母和符号进行了编码
+     Latin-1:总共有256个，兼容ASCII，同时对欧洲的符号进行了编码
+  (2)如何存储中文字符
+     GB2312:对常用的6千多汉字进行了编码，兼容ASCII码
+     GBK:对两万多汉字进行了编码，兼容GB2312
+     BIG5:台湾繁体字编码，兼容 ASCII码
+     Unicode:对世界上主流国家常用的语言进行了编码，兼容ASCII码，不兼容GB2312，GBK，BIG5；具体的存储方案有UTF-8、UTF-16、UTF-32
+     中文乱码产生的原因：mysql默认使用Latin-1编码。
+  (3)解决MySQL中文乱码
+     Sql脚本文件另存为的编码
+     客户端连接服务器端使用的编码(SET NAMES UTF8)
+     服务器端创建数据库使用的编码(CHARSET=UTF8)
+     练习：编码脚本文件01_sohu.sql,先丢弃在创建数据库sohu,设置
+ 存储的编码为UTF8，进入该数据库，创建保存新闻数据的表news,包含编码nid,标题title,发表时间pubTime,来源origin,内容content;插入数据,删除1条，修改1条
+2.MySQL中的列类型
+  创建数据表的时候，指定的列可以存储的数据类型
+      CREATE TABLE t1(nid 列类型);
+  (1)数值型--引号可加可不加
+     TINYINT 微整形，占1字节(8位)，范围-128~127
+     SMALLINT 小整形，占2个字节(16位)，范围-32768~32767
+     INT 整形，占4个字节(32位)，范围-2147483648~2147483647
+     BIGINT 大整形，占8个字节(64位)
+     FLOAT 单精度浮点型，占4个字节，范围3.4E–38～3.4E+38(E38:10的38次方)，比INT范围大得多，可能产生计算误差
+     DOUBLE 双精度浮点型，占8个字节，范围1.7E–308～1.7E+308，范围比BIGINT大的多，可能产生计算误差
+     DECIMAL(M,D) 定点小数，不会产生计算误差，M代表总的有效位数，D代表小数点后的有效位数
+     BOOL 布尔型，只有两个值TRUE/1、FALSE/0，TRUE和FALSE不能加引号，最终存储的值是1和0，会变成TINYINT来存储。常用于存储只有两个状态的值，例如性别、是否在线、是否为会员...
+  (2)日期时间型--必须加引号
+     DATE 日期型 2019-12-25
+     TIME 时间型 14:32:50
+     DATETIME 日期时间型 2019-12-25 14:32:50
+  (3)字符串类型--必须加引号
+     VARCHAR(M) 变长字符串，不会产生空间浪费，操作速度相对慢，M最大值是65535，常用于存储姓名、文章标题、文章的内容
+     CHAR(M) 定长字符串，可能产生空间浪费，操作速度相对快，M最大值是255，常用于存储手机号码、身份号码等固定长度的数据
+     TEXT(M) 大型变长字符串，M最多是2G  
+     练习1：编写脚本文件02_xuezi.sql,设置存储的编码UTF8，创建
+ 数据库xuezi,进入该数据库，创建保存笔记本数据的表laptop,包含编号lid,标题title,价格price,库存量stockCount,上架时间pubTime,是否显示在首页isIndex;插入4条数据。
+     练习2：编写脚本文件03_tedu.sql,设置存储的编码为UTF8,创建
+     数据库tedu,进入该数据库，创建保存部门数据的表emp,包含部门编号did,名称dname,员工数量empCount,插入以下数据
+     10 研发部 3
+     20 市场部 2
+     30 运营部 2
+     创建保存员工数据的表emp,包含员工编号eid,姓名ename,性别sex,生日birthday,工资salary,所属部门编号deptId,插入数据。
+3.列约束
+  MySQL可以对插入的数据进行特定的验证，只有满足条件才允许插入到数据表中，否则被认为是非法的插入。
+  例如：一个人的性别只能是男或者女，一个人的年龄0~100
+  CREATE TABLE t1(id 列类型 列约束);
+  (1)主键约束--PRIMARY KEY
+     声明了主键约束的列上不允许插入重复的值，一个表中只能有一个主键，通常添加在编号列。设置了主键就不能再插入NULL值。
+     表中查询的记录会按照主键由小到大
+     NULL表示空，在插入数据时，无法确定要保存的值。例如无法确定员工的性别、生日、工资、所属部门都可以使用NULL；NULL和任何值比较都不等，包括两个NULL比较。
+     注意：不能加引号
+  (2)唯一约束--UNIQUE
+     声明了唯一约束的列上，不允许插入重复的值，允许插入NULL，而且允许插入多个NULL
+
+  课后任务：
+      (1)复习今天内容
+      (2)练习
+         编写脚本文件xz.sql,设置存储的编码utf8,创建数据库xz,进入该数据库，创建保存笔记本家族的表laptop_family，包含fid,家族名称fname,笔记本数量laptopCount;创建保存笔记本数据的表laptop，包含lid,title,price,规格spec,详情details,上架时间shelfTime,是否在售isOnsale,所属家族编号familyId，插入数据。
+
+2019-5-6
+复习：
+Mysql存储
+  ASCII/Latin-1/GB2312/GBK/BIG5/Unicode 
+  脚本文件/客户端连接服务器/服务器创建数据库统一UTF8
+  列类型
+   数值型
+     TINYINT/SMALLINT/INT/BIGINT
+     FLOAT/DOUBLE/DECIMAL
+     BOOL    性别  1/0
+   日期时间型
+     DATE/TIME/DATETIME
+   字符串型
+     VARCHAR/CHAR/TEXT
+1.列约束
+  CREATE TABLE t1(id 列类型 列约束);
+  (1)主键约束——PRIMARY KEY
+  (2)唯一约束——UNIQUE
+  (3)非空约束——NOT NULL
+     声明了非空约束的列上不允许插入NULL
+  (4)默认值约束——DEFAULT
+     可以使用DEFAULT关键字设置默认值，有两种方式可以使用默认值
+     INSERT INTO laptop_family VALUES(40,'小米',DEFAULT);
+     INSERT INTO laptop_family(fid,fname) VALUES(50,'戴尔');
+  练习：设置笔记本的默认价格为6999，分别使用两种默认值插入数据
+  (5)检查约束——CHECK
+     检查约束可以对要插入的数据进行自定义的验证
+     CREATE TABLE student(
+        score TINYINT CHECK(score>=0 AND score<=100)
+     );
+     mysql不支持检查约束，会降低数据的插入速度
+  (6)外键约束——FOREIGN KEY
+     声明了外检约束的列上，取值必须在另一个表的主键列上出现过，两者的列类型保持一致，允许使用NULL
+     FOREIGN KEY(列名) REFERENCES 数据表(主键列)
+2.mysql的自增列
+    AUTO_INCREMENT:自动增长，假如一个列上声明了自增列，无需手动赋值，直接赋值为NULL，就会获取当前的最大值，然后加1插入
+    注意：只适用于整数型的主键列
+          自增列允许手动赋值
+  练习：编写脚本文件01_tedu.sql,创建数据库tedu,进入该数据库；创建保存部门数据的表dept(did,dname)
+  10 研发部 20 市场部 30 运营部 40测试部
+  创建保存员工数据的表emp(eid,ename,sex,birthday,工资salary,所属部门编号deptId),插入15条数据。
+3.简单查询
+  (1)查询特定的列
+     示例：查询出所有员工的姓名和工资
+     SELECT ename,salary FROM emp;
+     练习：查询出所有员工的编号，姓名，性别，生日
+     SELECT eid,ename,sex,birthday FROM emp;
+  (2)查询所有的列
+     SELECT * FROM emp;
+     SELECT eid,ename,sex,birthday,salary,deptId FROM emp;
+  (3)给列起别名
+     示例：查询所有员工的姓名和工资，使用中文别名
+     SELECT ename AS 姓名,salary AS 工资 FROM emp;
+     练习：查询所有员工的编号，姓名，性别，生日，使用中文别名
+     SELECT eid AS 编号,ename AS 姓名,sex AS 性别,birthday AS 生日 FROM emp;
+     练习：查询所有员工的编号和姓名，使用一个字母别名
+     SELECT eid AS a,ename AS b FROM emp;
+     在给列起别名的时候，AS关键字可以省略的，保留空格
+  (4)显示不同的记录/合并相同项
+     示例：查询都有哪些性别的员工
+     SELECT DISTINCT sex FROM emp;
+     DISTINCT(合并)
+     练习：查询出员工都分布在哪些部门
+     SELECT DISTINCT deptId FROM emp;
+  (5)查询时执行计算
+     示例：计算2+5-6.3*7.9+4*5.4
+     SELECT 2+5-6.3*7.9+4*5.4;
+     练习：查询所有员工的姓名及其年薪
+     SELECT ename,salary*12 AS 年薪 FROM emp;
+     练习：假设每个员工工资加500，年终奖加5000，查询出所有员工的姓名及其年薪，给列起中文别名。
+     SELECT ename AS 姓名,(salary+500)*12+5000 AS 年薪 FROM emp;
+  (6)查询的结果集排序
+     示例：查询所有的部门，结果集按照编号从小到大排序
+     SELECT * FROM dept ORDER BY did ASC;#ascendant升序
+     示例：查询所有的部门，结果集按照编号从大到小排序
+     SELECT * FROM dept ORDER BY did DESC;#Describe描述 Descendant降序
+     练习：查询所有的员工，结果集按照工资降序排列
+     SELECT * FROM emp ORDER BY salary DESC;
+     练习：查询所有的员工，结果集按照年龄从小到大排列
+     SELECT * FROM emp ORDER BY birthday ASC;
+     练习：查询所有的员工，结果集按照姓名升序排序
+     SELECT * FROM emp ORDER BY ename ASC;
+     练习：查询所有的员工，结果集按照工资升序排序，如果工资相同按照姓名升序排列
+     SELECT * FROM emp ORDER BY salary ASC,ename ASC;
+     练习：查询所有的员工，所有的女员工显示在前面，如果性别相同，按照生日降序排列
+     SELECT * FROM emp ORDER BY sex,birthday DESC;
+     ORDER BY 可以按照数值，日期时间，字符串来排序，默认按照ASC升序排列
+  (7)条件查询
+     示例：查询出姓名为king的员工的所有的列
+     SELECT * FROM emp WHERE ename='king';
+     练习：查询出编号为5的员工的编号，姓名，工资
+     SELECT eid,ename,salary FROM emp WHERE eid=5;
+     练习：查询出20号部门下员工所有的列
+     SELECT * FROM emp WHERE deptId=20;
+     练习：查询出女员工所有的列
+     SELECT * FROM emp WHERE sex=0;
+     练习：查询出工资在5000以上的员工的所有列
+     SELECT * FROM emp WHERE salary>=5000;
+     比较运算符：>=  <=  >  <  =  !=(不等于)
+     练习：查询出1991-1-1后出生的员工所有列
+     SELECT * FROM emp WHERE birthday>'1991-1-1';
+     练习：查询出不在10号部门的员工所有列
+     SELECT * FROM emp WHERE deptId!=10;
+     练习：查询出没有明确部门的员工所有列
+     SELECT * FROM emp WHERE deptId IS NULL;
+     练习：查询出有明确部门的员工所有列
+     SELECT * FROM emp WHERE deptId IS NOT NULL;
+     练习：查询出工资在6000以上的男员工所有列
+     SELECT * FROM emp WHERE salary>=6000 AND sex=1;
+     练习：查询出工资在5000~8000之间员工所有列
+     SELECT * FROM emp WHERE salary>=5000 AND salary<=8000;
+     SELECT * FROM emp WHERE salary BETWEEN 5000 AND 8000;
+     练习：查询出工资在5000以下和8000以上的员工所有列
+     SELECT * FROM emp WHERE salary<=5000 OR salary>=8000;
+     SELECT * FROM emp WHERE salary NOT BETWEEN 5000 AND 8000;
+     练习：查询出1990年之前和1993年之后出生的员工所有列
+     SELECT * FROM emp WHERE birthday<'1990-1-1' OR  birthday> '1993-12-31';
+     SELECT * FROM emp WHERE birthday NOT BETWEEN '1990-1-1' AND '1993-12-31';
+     练习：查询出1993年出生的员工所有列
+     SELECT * FROM emp WHERE birthday>='1993-1-1' AND birthday<='1993-12-31';
+     SELECT * FROM emp WHERE birthday BETWEEN '1993-1-1' AND '1993-12-31';
+     练习：查询出20号部门和30号部门员工所有列
+     SELECT * FROM emp WHERE deptId=20 OR deptId=30;
+     SELECT * FROM emp WHERE deptId IN(20,30);
+     练习：查询出不在20号部门和30号部门员工所有列
+     SELECT * FROM emp WHERE deptId NOT BETWEEN 20 AND 30;
+     SELECT * FROM emp WHERE deptId NOT IN(20,30);
+     AND/OR
+     BETWEEN AND/NOT BETWEEN AND
+     IS NULL/IS NOT NULL
+     IN()/NOT IN()
+  (8)模糊条件查询
+     示例：查询姓名中含有字母e的员工所有列
+     SELECT * FROM emp WHERE ename LIKE '%e%';
+     练习：查询姓名中以e结尾的员工所有列
+     SELECT * FROM emp WHERE ename LIKE '%e';
+     练习：查询姓名中倒数第2个字符为e的员工所有列
+     SELECT * FROM emp WHERE ename LIKE '%e_';
+     % 可以匹配任意多个字符 >=0
+     _ 可以匹配任意1个字符  =1
+     以上两个匹配符号必须使用LIKE关键字
+  (9)分页查询
+     查询的结构集中有太多的数据，一次显示不完，可以分页显示。
+     需要两个条件：页面的数据量，当前的页码
+     任意1页开始的值=(当前的页码-1)*每页的数据量
+     SELECT * FROM emp LIMIT start,count;
+     start:开始的值
+     count:每页的数据量
+     注意：start和count的取值必须是数值，不能使用字符串。
+     练习：假设每页显示5条记录，分别查询前5页
+     第1页：SELECT * FROM emp LIMIT 0,5;
+     第2页：SELECT * FROM emp LIMIT 5,5;
+     第3页：SELECT * FROM emp LIMIT 10,5;
+     第4页：SELECT * FROM emp LIMIT 15,5;
+
+课后任务：
+    (1)复习内容，删除代码保留注释，重新编写SQL语句
+    (2)查询出工资在8000以上的女员工的姓名、性别、生日和工资，结果集按照工资的降序排列，取出前3条数据。
+    SELECT ename,sex,birthday,salary
+    FROM emp
+    WHERE salary>=8000 AND sex=0
+    ORDER BY salary DESC
+    LIMIT 0,3;
+
+2019-5-7
+1.复杂查询
+  (1)聚合查询/分组查询
+     示例：查询所有员工的数量
+     SELECT COUNT(eid) FROM emp;
+     练习：使用所属部门编号计算员工数量
+     SELECT COUNT(deptId) FROM emp;
+     练习：使用员工姓名计算员工数量
+     SELECT COUNT(ename) FROM emp;
+     SELECT COUNT(*) FROM emp;
+     **聚合函数
+     **函数是一个功能体，提供若干个数据，产出结果——饺子机
+     **COUNT()/SUM()/MAX()/MIN()/AVG()
+     练习：查询出所有员工工资的总和
+     SELECT SUM(salary) FROM emp;
+     练习：查询出所有男员工的平均工资
+     SELECT AVG(salary) FROM emp WHERE sex=1;
+     SELECT SUM(salary)/COUNT(*) AS 'avg(1)' FROM emp WHERE sex=1;
+     练习：查询出所有女员工最高工资
+     SELECT MAX(salary) FROM emp WHERE sex=0;
+     练习：查询出所有员工的最低工资
+     SELECT MIN(salary) FROM emp WHERE sex=0;
+     **分组查询只能查询聚合函数和分组条件
+     示例：查询出每个部门的员工数量是多少
+     SELECT deptId,COUNT(*) FROM emp GROUP BY deptId;
+     练习：查询出男女员工的平均工资、最低工资、最高工资
+     SELECT sex,AVG(salary),MAX(salary),MIN(salary) FROM emp GROUP BY sex;
+     **year() 获取日期中的年份
+     **month() 获取日期中的月份
+     示例：查询出1991年出生的员工
+     SELECT * FROM emp WHERE YEAR(birthday)=1991;
+     练习：查询出3月份出生的员工
+     SELECT * FROM emp WHERE MONTH(birthday)=3;
+  (2)子查询
+     把一个SQL语句的查询结构作为另一个SQL语句的查询条件
+     示例：查询出研发部员工所有的列
+     步骤1：查询出研发部的部门编号——10
+     SELECT did FROM dept WHERE dname='研发部';
+     步骤2：查询出10号部门员工所有列
+     SELECT * FROM emp WHERE deptId=10;
+     综合：
+     SELECT * FROM emp WHERE deptId=(SELECT did FROM dept WHERE dname='研发部');
+     练习：查询出比Tom工资高的员工的所有列
+     SELECT * FROM emp WHERE salary>(SELECT salary FROM emp WHERE ename='Tom');
+     练习：查询出和tom同一年出生的员工有哪些
+     SELECT * FROM emp WHERE YEAR(birthday)=(SELECT YEAR(birthday) FROM emp WHERE ename='tom');
+  (3)多表查询
+     示例：查询出所有的员工及其部门名称
+     SELECT did,ename,dname FROM dept,emp;
+     错误：笛卡尔积
+     多表查询避免产生笛卡尔积，给查询添加条件
+     SELECT did,ename,dname FROM dept,emp WHERE did=deptId;
+     以上查询方式无法查询出没有部门的员工，也无法查询出没有员工的部门，这是SQL-92中的多表查询语法；在SQL-99中提出了新的查询语法
+     (1)内连接 INNER JOIN...ON... 和SQL92的结果一样
+        SELECT ename,dname FROM emp INNER JOIN dept ON deptId=did;
+     (2)左外连接 LEFT OUTER JOIN...ON...
+        SELECT ename,dname FROM emp LEFT OUTER JOIN dept ON deptId=did;
+	查询的结果是左侧表中所有的记录都显示，OUTER可以省略
+     (3)右外连接 RIGHT OUTER JOIN...ON...
+        SELECT ename,dname FROM emp RIGHT OUTER JOIN dept ON deptId=did;
+	查询的结果是右侧表中所有记录都显示，OUTER可以省略
+     (4)全连接 FULL JOIN...ON...
+        显示左侧和右侧表中所有记录，MySQL不支持
+	UNION 合并相同的项
+	UNION ALL 不合并相同的项
+	(SELECT ename FROM emp_us)
+	UNION
+	(SELECT ename FROM emp_cn);
+
+	全连接
+	(SELECT ename,dname FROM emp LEFT OUTER JOIN dept ON deptId=did)
+	UNION
+	(SELECT ename,dname FROM emp RIGHT OUTER JOIN dept ON deptId=did);
+
+day01
+学习一门编程语言的基本步骤
+  (1)了解背景知识：历史、现状、特点、应用场景
+  (2)搭建开发环境，编写hello world
+  (3)变量和常量
+  (4)数据类型
+  (5)运算符
+  (6)逻辑结构
+  (7)通用小程序
+  (8)函数和对象
+  (9)第三方库、框架
+  (10)实用的项目
+
+1.JS概述
+  (1)历史
+     1995年，JS最早出现在Netscape公司的浏览器中;
+     1997年，出现JS的标准规范ECMAScript;
+     2009年，JS遵循CommonJS规范，开始向服务器端发展，出现nodejs。
+  (2)现状
+     既可以在客户端浏览器，也可以运行在服务器端
+  (3)特点
+     解释型语言，编译一行执行一行
+     弱类型语言
+     基于对象
+     跨平台
+  (4)应用场景
+     用于浏览器端的交互效果
+     用于服务器端的创建web服务器、操作数据库、操作文件...
+2.搭建JS开发环境
+  (1)浏览器自带的JS解释器
+  (2)nodejs下的JS解释器(服务器端)
+     http://nodejs.org 下载地址，选左侧
+     在命令行cmd下 node -v 查看当前计算机的nodejs版本
+  (3)执行JS代码
+     浏览器：
+         创建01.js和01.html
+	 在html文件中引入js脚本
+	 <script src='01.js'></script>
+     nodejs:
+         node C:/xampp/.../01.js 回车
+3.JS代码规范
+  (1)区分大小写
+  (2)每行代码结束的分号可加可不加，建议都加
+  (3)分为单行注释(//...)和多行注释(/*...*/)
+4.变量
+  用于存储数据的容器
+  (1)声明变量
+     var a=1;
+     练习：声明多个变量，分别保存员工的编号，姓名，性别，年龄，工资，所属部门编号。
+  (2)声明多个变量
+     var x=1,y=2;
+     声明多个变量用逗号隔开
+  (3)变量的命名规则
+     变量名称由字母、数字、下划线、美元符号，组成，数字不能出现在开头
+     不能使用关键字和保留字作为变量名
+     username user_name userName
+  (4)变量声明未赋值
+     结果是undefined 未定义
+5.常量
+  一旦声明，就不允许重新赋值。
+  使用关键字const
+  const pi=3.14;
+6.数据类型
+  分为原始类型和引用类型
+  原始类型分为数值型、字符串型、布尔型、未定义型、空
+  (1)数值型
+     分为整形和浮点型
+     整形占4个字节，浮点型占8个字节
+     8进制，以0开头，例如：012->10
+     1 2 3 ... 7 10 11 12
+     16进制
+     1 2 3 ... 9 a b c d e f 10
+     0xf 0xE 0xF0   0xFF
+     10  20  30     F0        FF
+     16  2*16 3*16  15*16=240 240+15=255
+  课后任务：
+  (1)复习今天内容，整理思维导图
+  (2)练习
+     声明常量保存圆周率，声明变量保存圆的半径，声明变量计算圆
+  的面积和周长。
+
+day02
+复习
+复杂查询
+  聚合查询/分组查询
+    COUNT()/SUM()/MAX()/MIN()/AVG()
+    YEAR()/MONTH()
+    GROUP BY
+  子查询
+  多表查询
+    查询条件
+    内连接 t1 INNER JOIN t2 ON...
+    外连接 t1 LEFT OUTER JOIN t2 ON...
+           t1 RIGHT OUTER JOIN t2 ON...
+    全连接 UNION/UNION ALL
+浏览器/服务器 nodejs
+  变量 var $_a1=1;
+  常量 const pi=3.14;
+日期时间存储的是 距离计算机元年的毫秒数
+  1秒=1000毫秒
+  1970年1月1日 0:0:0
+  2019-5-5 9:13:20
+
+1.数据类型
+  原始类型和引用类型
+  1.原始类型
+  (1)数值型
+     整形和浮点型
+      8   16   10
+      314.15  31.415*10  3.1414*10^2
+      3.1514e2
+  (2)字符串型
+     数据被引号所包含就是字符串型，不区分单双引号
+     查看某个字符的Unicode码
+     'a'.charCodeAt()  //97
+  (3)布尔型
+     在程序中表示真或者假的结果
+     true/false
+     常用语一些是否的结果，例如是否登录，是否注册，是否为会员，是否在售
+     var isLogin=false;
+  (4)未定义型
+     声明了变量未赋值，结果是undefined
+  (5)空
+     null，常用于引用类型
+     检测数据类型
+     typeof 数据
+     五种类型：
+         数值型：number
+	 字符串型：string
+	 布尔型：boolean
+	 未定义型：undefined
+	 空：object
+2.数据类型转换
+  (1)隐式转换
+     ①数值型+字符串型 数值型转成字符串型
+      1+'2'  //'12'
+     ②数值型+布尔型 布尔型转换成数值型 true->a false->0
+      1+true  //2
+     ③字符串型+布尔型 布尔型转成字符串型
+      'hello'+true  //'hellotrue'
+
+  JS中加号(+)作用
+       执行加法运算
+       字符串的拼接
+  练习：声明变量保存姓名name，性别sex，年龄age；使用字符串拼接打印‘我的姓名(变量中的值),性别(变量中的值),我的年龄为(变量中的值)’。
+  练习：查看一下程序的执行结果
+    var a=3,b=true,c='tedu';
+    console.log(a+b+c);//'4tedu'
+    console.log(b+c+a);//'truetedu3'
+    console.log(c+a+b);//'tedu3true'
+  减法、乘法、除法隐式转换
+    将运算符两端的数据转成数值型，自动调用Number来转，如果字符串中含有非数字返回NaN(Not a Number),任何值和NaN执行减乘除都返回NaN
+  (2)强制转换
+     ①将数据转为数值型
+      Number()
+      Number('9')  //9
+      Number('2a')  //NaN
+      Number('true')  //1
+      Number(undefined)  //NaN
+      Number(null)  //0
+     ②将数据转为整型
+      parseInt()
+      parseInt(2.5);//2
+      parseInt('2.9a');//2
+      parseInt('a2');//NaN
+     ③将数据转为浮点型
+      parseFloat()
+      parseFloat(2.9a);//2.9
+      parseFloat('a2');//NaN
+     练习：将布尔型、未定义型、空转换为整型或者浮点型
+     parseInt和parseFloat在将布尔型、未定义型、空转数值的时候，都返回NaN
+     ④将数值型和布尔型转成字符串型
+      toString()
+      var n=5;
+      n.toString()  //'5'
+3.运算符
+  由运算符连接操作的数据，所组成的形式就是表达式
+  (1)算数运算符
+     + - * / % ++ --
+     % 取余
+     ++ 自增：在当前的基础之上加1
+     -- 自减：在当前的基础之上减1
+     console.log(num++ 先打印num的值，然后再执行自增)
+     console.log(++num) 先执行自增，然后打印num的值
+     练习：
+     var a=1;
+     console.log(a++ + ++a);
+                 1       3
+     var b=2;
+     console.log(--b + b--);
+                   1   1
+  (2)比较运算符
+     >= <= > < ==(等于) != ===(全等于) !===(不全等于)
+     返回布尔型(true/false)的值
+     == 只是比较两个值是否相等
+     === 不仅比较值，还会比较数据类型
+     3>'10' //false
+     数字和字符串比较，字符串转为数值型
+     '3'>'10' //true
+     两个字符串比较，比较的是首个字符的Unicode码
+     3>NaN  //false
+     3<NaN  //false
+     3==NaN  //false
+     NaN==NaN  //false
+     NaN和任何值比较(> < >= <= == ===)都是false,包括自身
+  (3)逻辑运算符
+     并且&& 关联的两个条件都是true,结果才是true,否则false
+     或者|| 关联的两个条件都是false,结果才是false,否则true
+     非(反向)! !true->false !false->true
+     逻辑短路 
+       && 当第一个条件为false的时候，就不需要再执行第二个条件
+       || 当第一个条件为true的时候，就不需要再执行第二个条件
+       注意：逻辑短路无需关注最终的结果是true还是false，重点看第二个表达式是否执行。
+       练习：查看以下程序是否会报错
+       var num=3;
+       num>5 && console.log(a);
+       num<1 || console.log(a);
+  (4)位运算符
+     在执行运算的时候，计算机会将数据转成二进制进行运算
+     1 10 11 100 101 110 111 1000 1001 1010 1110 1111
+       2      4                8
+     101101=100000+1000+100+1
+              32    8    4  1
+     0 1 2 3 4  5  6  7
+     1 2 4 8 16 32 64 128
+     25=16+8+1
+        10000+1000+1=11001
+     按位与(&):上下两位都是1，结果是1，否则为0
+     按位或(|):上下两位含有1，结果是1，否则为0
+     课后任务：
+         (1)复习，整理思维导图
+	 (2)练习：声明变量保存一个年份，判断是否为闰年，结合着逻辑短路，如果是闰年，打印“闰年”。(普通闰年:能被4整除但不能被100整除,世纪闰年:能被400整除的为世纪闰年)。
+	 var year=2012;
+	 ((year%4===0&&year%100!==0)||year%400===0) && console.log('闰年');
+
+day03
+复习：
+原始类型
+数值型、字符串型、布尔型、未定义型undefined、空null
+数据类型转换
+隐式转换 字符串中加法运算 拼接
+    字符串+数值
+    数值+布尔型
+    字符串+布尔型
+强制转换
+    Number()
+    parseInt('3a') //3
+    parseFloat('3.4a') //3.4
+    toString()
+数据类型
+    1.算术运算符 + - * / % ++ --
+    2.比较运算符 >=  <= > < == != === !==
+    3.逻辑运算符 &&(逻辑与) ||(逻辑或) !(逻辑非)
+    4.位运算符 &(按位与) |(按位或)
+程序员必做的50题
+https://wenku.baidu.com/view/af66e2f14afe04a1b071de42.html
+
+1.位运算符
+  按位与(&):上下两位都是1，结果是1，否则为0
+  按位或(|):上下两位含有1，结果是1，否则为0
+  按位异或(^):上下两位相同为0，不同为1
+  按位右移(>>):删除2进制的最后的相应位数
+  按位左移(<<):在2进制的末尾补相应的0,每移动一位增大一倍
+2.赋值运算符
+  = += -= *= /= %=
+  练习：声明一个变量为空字符串，声明多个变量分别保存员工的姓名，使用+=往后拼接员工的姓名。
+  练习：打八折，声明变量保存商品的价格，使用*=实现打八折。
+3.三目运算符
+  单目运算符：有一个数据和表达式组成
+      a++  a--  !a
+  双目运算符：有两个数据和运算符组成
+      1+1 3>2 && ||...
+  三目运算符：有三个数据和运算符组成
+      条件表达式?表达式1:表达式2
+      如果条件表达式为true，执行表达式1
+      如果条件表达式为false，执行表达式2
+4.浏览器端函数
+  alert()  弹出警示框
+  prompt()  弹出提示框，需要使用变量来保存输入的值，这个值的数据类型是字符串型
+  练习：两次弹出提示框，输入数字，计算两次输入的和，并打印
+  程序=数据+算法
+  程序分为顺序执行、选择执行、循环执行
+5.流程控制——选择执行
+  (1)if语句
+     if(条件表达式){
+	语句1;
+     }
+     语句2;
+     说明：如果if后的语句只有一行，则可以省略大括号
+     在条件表达式中，有一些值默认转成false
+         Undefined null 0 NaN
+     判断一个值是否为NaN
+         isNaN() 是->true 否->false
+  (2)if-else 语句
+     if(条件表达式){
+	语句1;
+     }
+     else{
+	语句2;
+     }
+  (3)if-else嵌套
+     if(条件表达式1){
+	语句1;
+     }else...if(条件表达式n){
+	语句n;
+     }else{
+	语句n+1;//以上所有的条件表达式都为false
+     }
+  (4)switch-case语句
+     是一种特殊的分置于句，可以根据一个表达式的不同值，来选择执行不同的语句
+     switch(表达式){
+	case 值1:  //如果表达式的值为值1
+	     语句1;
+	     break;//结束，不会往后执行其它的语句
+	case 值2:  //如果表达式的值为值2
+	     语句2;
+	...
+	default:
+	     语句n;//如果表达式的值和所有的值比较都是false
+     }
+     表达式在和case后的值比较的时候，使用的是全等于，要求值和类型都相等
+     对比if-else嵌套和switch-case的区别
+     相同点：两者都可以用于多项分支语句
+     不同点：if-else可以判断相等或者不等的情况，适用范围更广泛；switch-case只能用于全等的比较，结构上更为清晰合理，执行效率相对高。
+     课后任务
+         (1)复习，整理思维导图
+	 (2)练习：使用弹出提示框，输入商品的价格和数量并计算总价，如果满500打9折；使用变量保存余额,如果足以支付，打印"pay success",否则打印"pay error"。
+	 var price=prompt("请输入价格：");
+	 var number=prompt("请输入数量：");
+	 total=price*number;
+	 var yue=500;
+	 if(yue>=total){
+		console.log('pay success');
+	 }else{
+		console.log('pay error');
+	 }
+
+day04
+复习
+运算符
+  位运算符 & | ^ >> <<
+  赋值运算符 = += -= *= /= %=
+  三目运算符 条件表达式?表达式1:表达式2
+选择执行
+  if(条件表达式){语句1;}
+  if(条件表达式){语句1;}else{语句2;}
+  if(条件1){语句1;}else...if(条件n){语句n;}else{语句n+1;}
+  switch(表达式){
+	case 1:
+	  语句1;
+	  break;
+	default:
+	  语句n;
+  }
+
+1.循环执行
+  循环：一遍又一遍的执行相同或者相似的代码
+  循环的两个要素:
+      循环条件：控制循环的次数
+      循环体：重新执行的相同或者香色代码
+  1.while循环
+    (1)while(循环条件){//是一个布尔型的值
+	循环体
+       }
+    (2)break
+       while(true){//是一个布尔型的值
+	循环体
+	break;
+       }
+     在循环中，可以结束任何形式的循环
+     练习：使用无限循环计算1~10之间所有整数的乘积
+     练习：声明变量保存任意一个数字，使用无限循环的循环体中弹出提示框输入数字，如果输入的数字大于保存的数字，使用警示框弹出'big';如果小于保存的数字，弹出'small';否则弹出'right'，并结束循环。
+  2.do-while循环
+    do{
+	循环体
+    }while(循环条件);
+    无限循环
+    do{
+	循环体
+    }while(true);
+  练习：声明变量保存密码123456，(无限)循环弹出提示框输入密码，如果输入正确结束循环。
+  3.for循环
+    for(表达式1;表达式2;表达式3){
+	循环体;
+    }
+    表达式1:初始值
+    表达式2:循环条件
+    表达式3:增量
+  4.break和continue
+    break:结束循环，后续不会再执行其他的循环
+    continue:跳过本次循环，继续下一次循环
+  5.循环嵌套
+    任意循环之间可以相互嵌套
+    *
+    **
+    ***
+    ****
+    *****
+  课后任务
+      (1)复习，整理思维导图
+      (2)练习：打印九九乘法表
+               打印本世纪(2000-2100)前10个闰年
+	       计算1~100之间的和，当和大于4000的时候，提前结束循环，并打印当前的和是多少
+
+day05
+复习
+    while(循环条件){ 循环体 };
+    do{ 循环体 }while(循环条件);
+    for(初始值;循环条件;增量){ 循环体 };
+    循环嵌套
+        break
+	continue
+	var i=0,sum=0;
+	do{
+	   i++;
+	   if(i%2===0) continue;
+	   if(i%5===0) break;
+	   sum+=i;
+	}while(i<10);
+	console.log(sum);
+
+1.函数
+  parseInt()/parseFloat()/alert()/prompt()/isNaN...
+  函数分为系统函数和自定义函数
+  function:功能体，函数(方法)，可以接受若干个数据，返回处理的结果。用于封装反复执行的代码——饺子机。
+  (1)创建普通函数
+     function 函数名称(){
+	函数体——封装的代码
+     }
+     调用：
+         函数名称();
+     练习：创建函数，封装计算1-100之间所有整数的和并打印出现；调用3次。
+     练习：创建函数，封装两个数字相加的和；调用多次
+  (2)创建带有参数的函数
+     function 函数名称(参数列表){//用于接收传递的数据
+	函数体
+     }
+     调用：
+         函数名称(参数列表);//实际要传递的数据
+         参数：创建函数时的参数称为形参，调用时的参数称为实参，
+     同时实参会赋值给形参，多个参数之间用逗号隔开。参数可以有0个或者多个，如果形参未被赋值，值为undefined。
+     练习：创建函数，计算1~任意数字之间所有整数的和，调用多
+     次。
+     练习：创建函数，计算任意两个年份之间的闰年个数并打印，
+     调用多次。
+  (3)创建带有返回值的函数
+     function 函数名称(参数列表){
+	函数体
+	return 值;//返回值，就是函数调用后的结果
+     }
+     调用:
+         函数名称(参数列表);
+     注意事项：如果函数中没有return或者return后没有加任何的值，返回undefined。return 后的代码不会再执行。
+     练习：创建函数，传递两个参数，返回任意两个数字的最大值
+     练习：创建函数，传递订单的状态码这个参数，返回对应的中文状态。
+         1-等待付款 2-等待发货 3-运输中 4-已签收 5-已取消 其他-无法追踪
+     练习：创建函数，返回任意三个数字的最大值 3 4 5
+     练习：创建函数，传递一个年份，要求返回是否为闰年，是->true,否则返回false
+     练习：创建函数，传递一个年份，如果是闰年返回366，不是闰年返回365
+     练习：计算1-任意数字之间所有整数阶乘的和
+2.变量的作用域
+  (1)作用域
+     变量或者函数的可访问范围，分为两种
+     函数作用域：在函数中使用var声明的变量，只能在函数内部访问
+     全局作用域：在全局使用var声明的变量，可以再任意合法位置访问
+     注意：在函数内不适用var声明的变量，是全局变量，可以在函数外访问到。
+  (2)变量声明提升
+     JS程序在执行前，会将使用var声明的变量提升到所在作用域的最前边，但赋值还是在原来的位置。
+3.函数作用域
+  函数的可访问范围，分为全局作用域和函数作用域;在全局作用域下创建的函数可以在任何作用域下调用，函数作用域下创建的函数，只能在这个函数内部调用。
+  函数提升
+      和变量提升一样，JS在执行前，会将使用function关键字创建的
+  函数提升到所在作用域的最前边。在调用的位置执行函数体中的代码。
+4.递归
+  在函数内部调用自身，本身是一个死循环。
+  递归的正确用法：要有结束的条件，结合着return。
+  练习：使用递归计算1-任意数字之间所有整数的和。
+
+  斐波那契数列
+  1 1 2 3 5 8 13 21 34 55...
+  从第3个数开始，每个数的值为前两项相加的和
+  课后任务：
+      (1)复习
+      (2)练习：使用递归计算斐波那契数列的第n项
+               使用循环计算斐波那契数列的第n项
+	       12/30/50/100
+
+day06
+***《JavaScript高级程序设计》(第3版)
+1.匿名函数
+  没有名称的函数 function(){ 函数体; }
+  (1)创建函数
+     函数声明创建
+     function fun(){ 函数体; }
+     函数表达式创建
+     var fn=function(形参){ 函数体; }
+     函数名称和函数名称()的区别
+     例如：fun/fn  fun()/fn()
+           函数名称就是一个变量，对应的是函数的结构。
+	   函数名称()是函数的调用，所得到的是函数的返回结果。
+     对比函数声明和函数表达式的区别：
+         函数声明创建的函数存在提升，可以在任意的合法位置调用。
+	 函数表达式创建的函数只存在变量提升，必须先创建再调用。
+     练习：使用函数表达式来创建函数，计算任意两个数字之间所有整数的和，并返回结果。
+  (2)匿名函数的自调用
+     目的：创建函数作用域，防治污染全局
+     (function(形参列表){
+	//函数体中的变量和函数都不能被外部访问
+     })(实参列表);
+  (3)回调函数
+     将匿名函数以实参来传递，此时的形参就是匿名函数的函数名称
+     function fn(a){
+	//调用fn的时候，匿名函数赋给了a,a就是函数名称
+	a()  //执行传递的匿名函数体中的代码
+     }
+     fn(function(){...});
+     练习：创建函数，传递两个参数，都是使用匿名函数的形式传递，在匿名函数的函数体重分别返回一个数字；计算两个数字相加的和。
+2.全局函数
+  parseInt() //将数据转为整型
+  parseFloat() //将数据转为浮点型
+  encodeURI()  //对URI中的汉字进行编码
+  decodeURI()  //对已编码的URI进行解码
+  isNaN()  //检测一个值是否为NaN，是返回true,不是返回false
+  isFinite()  //检测一个值是否为有限值，是返回true,不是返回false
+    1/0 ->Infinity 无限值
+    '1+3'  'typeof 3'
+    eval()  //执行字符串中的表达式
+    练习：弹出提示框，输入一组运算，使用eval来执行字符串中的表达式
+3.对象
+  属于引用类型数据
+  对象：是一组属性(property)和方法(method)的集合
+  电脑：属性有屏幕尺寸、颜色、品牌、内存大小...方法有看视频、玩游戏、敲代码...
+  一个杯子：属性有颜色、品牌、容量、方法有喝水
+  万物皆对象
+  (1)JS中的对象
+     内置对象：JS提供的
+     宿主对象：根据不同的执行环境划分
+     自定义对象：自己创建的对象
+  (2)自定义对象
+     对象字面量
+     内置构造函数
+     自定义构造函数
+  (3)适用对象字面量来创建对象
+     使用大括号{}创建空对象
+     属性名和属性值之间用冒号隔开
+     多组属性之间用逗号隔开
+     属性名中引号可加可不加，如果含有特殊字符必须添加
+     练习：创建一个员工对象，包含编号、姓名、性别、生日、工资
+     练习：创建一个手机对象，包含颜色、品牌、尺寸、内存大小
+  (4)访问对象中的属性
+     对象.属性名
+     对象['属性名'] 如果属性名不加引号，会认为是变量
+     如果属性不存在，返回undefined
+     练习：创建图书的对象，包含图书的编号、标题、作者、价格、出版时间；修改图书的价格，访问图书的作者，添加图书的出版社属性
+  (5)使用内置构造函数创建对象
+     new Object();  创建一个空对象
+     需要通过访问对象中属性来添加每一个属性
+     练习:创建一个汽车对象，包含品牌、型号、颜色、长度、宽度
+  (6)遍历对象中的属性
+     依次访问对象中的每一个属性
+     for(var key in 对象){
+	key 代表对象中的每一个属性名,
+	对象[key] 获取每个属性值
+     }
+     练习：创建对象，包含有若干个成绩，遍历对象中属性，获取总成绩
+  (7)对象中的方法
+     var person={
+	name:'Tom',
+	say:function(){
+		this.name;//指代当前所在的对象
+	}
+     }
+     person.say();
+     练习：创建一个手机对象，含有属性颜色、品牌、价格；添加打电话、发短信方法。
+  课后任务：
+      (1)复习，整理思维导图
+      (2)练习：创建一个圆对象，含有半径和圆周率属性，添加计算面积，计算周长的方法。
+
+day07
+1.判断是否含有某个属性
+  对象.属性名===undefined   存在->false,不存在->true
+  对象.hasOwnProperty('属性名')   存在->true,不存在->false
+  '属性名' in 对象   存在->true,不存在->false
+2.数组
+  数组是由多个元素组成的集合，每个元素就是一个数据
+3.创建数组
+  (1)数组字面量
+     [元素1,元素2...]
+  (2)数组元素的访问
+     数组[下标]  下标是从0开始
+  练习：创建数组，包含若干个城市名称，修改某个元素，添加某个元素，最后打印结果。
+  (3)内置构造函数
+     new Array(元素1,元素2..)
+     new Array(3) 初始化数组的长度为3，可以添加更多个元素
+  练习：创建数组，包含若干个手机品牌名称
+  练习：创建数组，初始化长度为5，添加篮球场上的五个位置
+4.数组的长度
+   数组.length 获取数组元素的个数
+   在数组的末尾添加新元素
+       数组[ 数组.length ]=值;
+   练习：创建一个空数组，使用数组的长度来添加多个国家的名称。
+5.数组的分类
+  分为索引数组和关联数组
+  索引数组以0开始的整数作为下标
+  关联数组以字符串作为下标，关联数组中的元素只能单独添加。
+  练习：创建一个关联数组，包含有图书的编号、标题、作者以及价格
+6.遍历数组中的元素
+  (1)for-in
+     for(var key in 数组){
+	key  //要遍历的每个元素的下标
+	数组[key]  //每个下标对应的元素
+     }
+  练习：创建索引数组，包含若干个学生的成绩，计算总成绩和平均成绩
+  (2)循环
+     for(var i=0;i<数组.length;i++){
+	i  表示每个元素的下标
+	数组[i]  表示下标对应的元素
+     }
+     只能遍历索引数组
+  练习：创建数组，包含多个名字，把姓名中所有的tom替换成'汤姆'
+  练习：创建数组，包含有多个姓名，查看tom出现的次数
+  练习：创建函数，传递一个参数(一组工资)，返回平均工资
+  练习：创建函数，传递两个参数(要查找的数组，要查找的值)，如果找到了返回该元素的下标，如果没有找到返回-1
+        findName(['kate','tom','jerry'],'tom')
+  练习：创建函数， 传递一个参数(数组中含有多个数字)，返回数字中的最大值
+7.数组中的方法(api)
+  api  应用程序编程接口，预定义好的一些方法或者函数。
+     num.toString();将数组中的元素按照逗号转为字符串。
+     join('-');将数组中的元素按照指定的字符来分割转为字符串。
+     数组1.concat(数组2,数组3,...);拼接多个数组。
+     数组.slice(start,end);截取数组中的元素，start是开始的下标
+  ，end是结尾的下标，不包含end本身，如果end为空会截取到最后，如果是负数，表示倒数。
+  练习1：创建数组a~g,每个字母是一个元素，分别截取cd,f,b,组成一个新数组。
+      数组.splice(start,count,val1,val2,...);删除数组中的元素
+  ，start是开始的下标，count是删除的长度，value1是删除后添加的元素，如果count为空删除到最后，start表示倒数。
+  练习2：创建数组a~h，每个字母是一个元素，删除d、e替换f为m,在下标为2的位置添加字母z。
+      数组.reverse();翻转数组中的元素。
+      数组.sort();对数组中的元素进行排序，默认按照Unicode码从
+  小到大排序。
+      对数字排序
+      sort(function(a,b){
+	return a-b;//从小到大排序
+	//return b-a;//从大到小
+      });
+      数组.push();在数组的末尾添加元素，返回数组的长度。
+      数组.pop();删除数组的最后一个元素，返回被删除得元素。
+      数组.unshift();在数组的开头添加元素，返回数组的长度。
+      数组.shift();删除数组的第一个元素，返回被删除的元素。
+  课后任务：
+      (1)复习，整理思维导图
+      (2)练习：使用冒泡排序对数组中的数字从小到大排序
+               使用数组遍历，将数组中的元素翻转
+
+day08
+复习：
+  数组
+    数据的集合
+    创建 [] 内置构造函数new Array(3)
+    访问数组元素 下标  数组[下标]
+    添加元素 数组长度 数组[数组.length]
+    关联数组和索引数组
+      arr['name']='tom';
+    遍历
+      for-in  循环
+    数组的API
+      toString()/join/concat/slice/splice(start,count,v1,v2...)/reverse/sort(function(a,b){ return a-b; })
+      push/pop/unshift/shift
