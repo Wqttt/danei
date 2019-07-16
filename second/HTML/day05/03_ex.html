@@ -1,0 +1,61 @@
+<!-- 2.密码框获取焦点，提示密码6~12位 -->
+<!--   失去焦点，做非空验证，span给出提示 -->
+<!-- 3.cpwd失去焦点，判断cpwd与upwd的值是否一致，给出提示 -->
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>03_ex</title>
+</head>
+<body>
+	用&nbsp;&nbsp;户&nbsp;&nbsp;名：<input type="text" id="uname" onfocus="msg_uname()" onblur="check_uname()">
+	<span id="msg1"></span><br>
+	密&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;码：<input type="password" id="upwd" onfocus="msg_upwd()" onblur="check_upwd()">
+	<span id="msg2"></span><br>
+	确认密码：<input type="password" id="cpwd" onfocus="msg_cpwd()" onblur="check_cpwd()">
+	<span id="msg3"></span><br>
+	<script>
+		function msg_uname(){
+			msg1.innerHTML="用户名为6~12位";
+		}
+		function check_uname(){
+			var $uname=uname.value;
+			if($uname==""){
+				msg1.innerHTML="您的用户名称为空";
+			}else if($uname.length>=6 && $uname.length<=12){
+				msg1.innerHTML="格式正确";
+			}else{
+				msg1.innerHTML="格式错误";
+			}
+		}
+
+		function msg_upwd(){
+			msg2.innerHTML="密码为6~12位";
+		}
+		function check_upwd(){
+			var $upwd=upwd.value;
+			if($upwd==""){
+				msg2.innerHTML="您的密码为空";
+			}else if($upwd.length>=6 && $upwd.length<=12){
+				msg2.innerHTML="格式正确";
+			}else{
+				msg2.innerHTML="格式错误";
+			}
+		}
+
+		function msg_cpwd(){
+			msg3.innerHTML="密码必须和上面一致";
+		}
+		function check_cpwd(){
+			var $cpwd=cpwd.value;
+			if($cpwd==""){
+				msg3.innerHTML="您的密码为空";
+			}else if($cpwd===upwd.value){
+				msg3.innerHTML="密码正确";
+			}else{
+				msg3.innerHTML="密码不一致";
+			}
+		}
+	</script>
+</body>
+</html>

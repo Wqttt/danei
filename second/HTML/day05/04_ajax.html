@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>04_ajax</title>
+</head>
+<body onload="getXHR()">
+	<script>
+		function getXHR(){
+			//1.创建异步对象
+			var xhr=new XMLHttpRequest();
+			console.log(xhr);
+			//2.打开连接，创建请求
+			xhr.open("get","http://127.0.0.1:8080/api/ajaxDemo",true);
+			//3.发送请求
+			xhr.send(null);
+
+
+
+
+
+
+
+
+
+			/*//兼容低版本浏览器，创建xhr对象
+			//1.判断浏览器版本
+			//2.创建xhr对象
+			if(window.XMLHttpRequest){
+				//有值是高版本
+				var xhr=new XMLHttpRequest();
+			}else{
+				//无值是低版本
+				var xhr=new ActiveXObject("Microsoft.XMLHttp");
+			}*/
+		}
+	</script>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>03_event</title>
+</head>
+<body onload="show()">
+	<input onfocus="msg_uname()" onblur="check_uname()" id="uname" type="text">
+	<span id="msg1"></span><br>
+	<input onfocus="msg_upwd()" onblur="check_upwd()" id="upwd" type="password">
+	<span id="msg2"></span><br>
+	<script>
+		function show(){
+			//页面加载完成之后，马上被调用
+			msg1.innerHTML="onload是页面加载完成后，马上调用";
+			msg2.innerHTML="onload是页面加载完成后，马上调用";
+		}
+		function msg_uname(){
+			msg1.innerHTML="用户名要6~12位";
+		}
+		function check_uname(){
+			//失去焦点做非空验证
+			//1.获取这个input的值
+			var $uname=uname.value;
+			//2.判断这个值是否为空
+			if($uname==""){
+				msg1.innerHTML="您输入的用户名为空";
+			}else if($uname.length>=6 && $uname.length<=12){
+				msg1.innerHTML="格式正确";
+			}else{
+				msg1.innerHTML="格式错误";
+			}
+		}
+		function msg_upwd(){
+			msg2.innerHTML="密码要6位";
+		}
+		function check_upwd(){
+			//失去焦点做非空验证
+			//1.获取这个input的值
+			var $upwd=upwd.value;
+			//2.判断这个值是否为空
+			if($upwd==""){
+				msg2.innerHTML="您输入的密码为空";
+			}else if($upwd.length=6){
+				msg2.innerHTML="格式正确";
+			}else{
+				msg2.innerHTML="格式错误";
+			}
+		}
+	</script>
+</body>
+</html>
