@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="js/vue.js"></script>
+  <script>
+    //全局组件：可用在Vue中的任何位置
+    Vue.component("counter",{
+      //template代替el
+      //因为没使用一次组件，都要自动重复按照模板创建出组件的htmL片段
+      template:`<div>
+        <button @click="add(-1)">-</button>
+        <span>{{n}}</span>
+        <button @click="add(+1)">+</button>
+      </div>`,
+      //data必须是一个函数，且必须返回一个新创建的对象。因为每个副本都需要创建一个专属的数据。data如果是函数，就可以反复调用，反复生成返回值对象
+      data(){
+        return{
+          n:1
+        }
+      },
+      methods:{
+        add(i){
+          this.n+=i;
+          if(this.n==0){
+            this.n=1;
+          }
+        }
+      }
+    })
+  </script>
+</head>
+<body>
+<div id="app">
+  <ul>
+    <li><counter></counter></li>
+    <li><counter></counter></li>
+    <li><counter></counter></li>
+  </ul>
+</div>
+<script>
+var vm=new Vue({
+  el:"#app",
+  data:{
+
+  }
+})
+</script>
+</body>
+</html>
