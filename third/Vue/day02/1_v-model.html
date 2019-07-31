@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="js/vue.js"></script>
+</head>
+<body>
+<div id="app">
+  <input v-model:value="kwords" :placeholder="placeholder" @keyup.13="search">
+  <button @click="search">百度一下</button>
+</div>
+<script>
+var vm=new Vue({
+  el:"#app",
+  data:{
+    kwords:"",
+    placeholder:"输入搜索关键词"
+  },
+  methods:{
+    search(){
+      console.log(`查找 ${this.kwords} 相关的内容...`)
+    }
+  },
+  watch:{
+    //每次输入时，做的事情和按下回车时，和点击查询按钮时做的事情都一样
+    kwords(){
+      this.search();
+      //this->凡是new Vue()中的this，都指new Vue()本身
+      //watch中的kwords()可通过this.search()调用methods中的search()方法？
+      //因为不管写在哪里，最后都被升级为直接隶属于new Vue(),所以其实kwords()和search()是平级的兄弟方法
+    }
+  }
+})
+</script>
+</body>
+</html>

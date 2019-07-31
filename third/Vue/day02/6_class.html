@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="js/vue.js"></script>
+  <style>
+    .vali_fail{
+      border:1px solid red;
+      background:pink;
+      color:red;
+      padding:5px 10px;
+    }
+    .vali_success{
+      border:1px solid green;
+      background:lightgreen;
+      color:green;
+      padding:5px 10px;
+    }
+  </style>
+</head>
+<body>
+<div id="app">
+  手机号：<input v-model="phone">
+  <span :class="spanClass">{{spanMsg}}</span>
+</div>
+<script>
+var vm=new Vue({
+  el:"#app",
+  data:{
+    //要想在Vue中验证个事，必须先用双向绑定接住input中的内容！
+    phone:"",
+    //要控制span的样式，就要为span定位对象，控制启用或不启用哪个class
+    spanClass:{
+      vali_success:false,
+      vali_fail:false
+    },
+    //要控制span的内容，就要定义专门的变量保存span的内容
+    spanMsg:""
+  },
+  //要想边修改,变执行验证，只能用watch
+  watch:{
+    //监控哪个变量，函数名就要和变量名一致！
+    phone(){
+      var reg=/^1[3-9]\d{9}$/;
+      //如果验证通过
+      if(reg.test(this.phone)==true){
+        //通过修改spanMsg变量的值，自动修改页面中span内容
+        this.spanMsg="手机号可用";
+        //通过spanClass中类名后的true或false，决定这次用哪个class，不用哪个class
+        this.spanClass={
+          vali_fail:false,//不启用验证失败的class
+          vali_success:true//启用验证成功的class
+        }
+      }else{
+        this.spanMsg="手机号格式不正确";
+        this.spanClass={
+          vali_fail:true,
+          vali_success:false
+        }
+      }
+    }
+  }
+})
+</script>
+</body>
+</html>

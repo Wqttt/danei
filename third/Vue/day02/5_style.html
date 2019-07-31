@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="js/vue.js"></script>
+  <style>
+    #app>div{
+      width:100px;
+      height:100px;
+      background-color:pink;
+      position:fixed;
+      top:0;
+      left:0;
+    }
+  </style>
+</head>
+<body>
+<div id="app">
+  <div style="box-shadow:5px 5px 10px black" :style="divStyle"></div>
+</div>
+<script>
+var vm=new Vue({
+  el:"#app",
+  data:{
+    divStyle:{
+      left:"100px",
+      top:"50px"
+    }
+  }
+})
+window.onkeydown=function(e){
+  if(e.keyCode==37){//左
+    var left=parseInt(vm.divStyle.left);
+    left-=20;
+    vm.divStyle.left=left+"px";
+  }else if(e.keyCode==38){//上
+    var top=parseInt(vm.divStyle.top);
+    top-=20;
+    vm.divStyle.top=top+"px";
+  }else if(e.keyCode==39){//右
+    var left=parseInt(vm.divStyle.left);
+    left+=20;
+    vm.divStyle.left=left+"px";
+  }else{//下
+    var top=parseInt(vm.divStyle.top);
+    top+=20;
+    vm.divStyle.top=top+"px";
+  }
+}
+</script>
+</body>
+</html>

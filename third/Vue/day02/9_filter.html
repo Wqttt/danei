@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="js/vue.js"></script>
+  <script>
+    Vue.filter(
+      "sexFilter",
+      function(oldVal,lang){
+        if(lang=="cn"){
+          var newVal=oldVal==1?"男":"女";
+        }else{
+          var newVal=oldVal==1?"Male":"Female";
+        }
+        return newVal;
+      }
+    )
+  </script>
+</head>
+<body>
+<div id="app">
+  <h1>性别：{{sex|sexFilter("cn")}}</h1>
+  <h1>sex ：{{sex|sexFilter("en")}}</h1>
+</div>
+<script>
+var vm=new Vue({
+  el:"#app",
+  data:{
+    sex:1
+  }
+})
+</script>
+</body>
+</html>

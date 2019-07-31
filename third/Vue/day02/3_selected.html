@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="js/vue.js"></script>
+</head>
+<body>
+<div id="app">
+  <select v-model:value="city">
+    <option value="bj">北京</option>
+    <option value="sh">上海</option>
+    <option value="hz">杭州</option>
+  </select>
+  <br>
+  <img :src="`img/${city}.jpg`" alt="">
+
+  <select v-model:value="face">
+      <option value="1">笑脸</option>
+      <option value="2">难过脸</option>
+      <option value="3">哭脸</option>
+      <option value="4">爆炸</option>
+    </select>
+    <br>
+    <img :src="`img/${face}.png`" alt="">
+</div>
+<script>
+var vm=new Vue({
+  el:"#app",
+  data:{
+    city:"sh",
+    face:"1"
+  }
+})
+</script>
+</body>
+</html>

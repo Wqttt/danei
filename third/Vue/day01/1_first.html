@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <!-- 准备 -->
+  <script src="js/vue.js"></script>
+</head>
+<body>
+  <!-- 
+    界面：
+    要求：界面的所有内容，要包在一个唯一的父元素内，再起一个id
+    在界面中用{{变量}}，标明哪里需要数据
+   -->
+   <div id="app">
+     <button @click="add">click me({{n}})</button>
+   </div>
+   <script>
+     //2.数据：页面中需要什么数据，内存中就需要提供什么变量来支持！页面中需要几个，程序中就要提供几个！
+    //强调：变量必须放在一个名为data的对象中
+    var data={
+      n:0  //界面需要
+    };
+    //3.用Vue对象将界面和数据绑定起来！
+    new Vue({
+      //找到id为APP的父元素，并监控其内容
+      el:"#app",//element
+      data,
+      methods:{
+        add(){
+          this.n++;
+        }
+      }
+    })
+   </script>
+</body>
+</html>
