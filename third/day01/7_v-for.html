@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="js/vue.js"></script>
+</head>
+<body>
+<div id="app">
+  <ul>
+    <li v-for="(task,i) of tasks" :key="i">{{i+1}} - {{task}}</li>
+  </ul>
+</div>
+<script>
+var vm=new Vue({
+  el:"#app",
+  data:{
+    tasks:["砂锅米线￥9","酸辣粉￥9","担担饺￥8","水果捞￥7","双拼饭￥13"]
+  }
+})
+</script>
+</body>
+</html>
