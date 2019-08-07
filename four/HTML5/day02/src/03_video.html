@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>3_视频专用事件与样式</title>
+  <style>
+    /*视频图片专用样式：指定显示方式*/
+    /*图片父元素*/
+    .box{
+      width:160px;
+      height:160px;/*父元素正方形*/
+      margin:10px 0 20px;
+      background:#b3ccee;
+      overflow:hidden;/*溢出隐藏*/
+      resize:both;
+      /*规定用户是否可以调整元素大小*/
+      /*none 不能，both调整宽度高度*/
+      border:1px solid red;
+    }
+    /*图片*/
+    .box img{
+      width:100%;
+      height:100%;
+      background:#cd0000;
+    }
+  </style>
+</head>
+<body>
+  <h3>视频专用事件与样式</h3>
+  <video src="res/x.mp4" id="v3" controls></video>
+  <hr>
+  <h3>视频与图片使用样式</h3>
+  <h4>默认fill 拉伸</h4>
+  <div class="box">
+    <img src="res/mm.png">
+  </div>
+  <h4>contain 包含</h4>
+  <div class="box">
+    <img src="res/mm.png" style="object-fit:contain">
+  </div>
+  <h4>cover 覆盖(截取)</h4>
+  <div class="box">
+    <img src="res/mm.png" style="object-fit:cover">
+  </div>
+  <script>
+    //任务一：了解三个事件
+    var v3=document.getElementById("v3");
+    // 1.canplaythrough 视频记载(元数据)成功
+    v3.addEventListener("canplaythrough",function(){
+      console.log("1.视频加载结束");
+      console.log("时长："+v3.duration);
+    })
+    // 2.ended          视频播放结束
+    v3.addEventListener("ended",function(){
+      console.log("3.视频播放结束");
+    })
+    // 3.timeupdate     视频正在播放
+    v3.addEventListener("timeupdate",function(){
+      console.log("2.视频正在播放中");
+      console.log("时间点："+v3.currentTime);
+    })
+    //任务二：了解视频与图片专用样式
+  </script>
+</body>
+</html>

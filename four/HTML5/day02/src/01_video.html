@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>01_video</title>
+</head>
+<body>
+  <h3>html5新特性--视频</h3>
+  <!-- 如下代码简写：显示视频第一个画布 -->
+  <!-- 静止画面 -->
+  <!-- controls属性：播放控件 -->
+  <video src="./res/x.mp4" loop id="v3">
+    您的浏览器版本较低，请升级！
+  </video>
+  <button onclick="vplay()">播放</button>
+  <button onclick="vpause()">暂停</button>
+
+  <script>
+    //1.获取视频元素
+    var v3=document.getElementById("v3");
+    //2.调整音量(0-1)
+    v3.volume=0.3;
+    //3.调整回放速率 5倍速播放
+    v3.playbackRate=1.5;
+    //4.调整回放速率 1/5倍速播放
+    //v3.playbackRate=0.2;
+    //5.播放视频按钮
+    function vplay(){v3.play()};
+    //6.暂停视频按钮
+    function vpause(){v3.pause()};
+  </script>
+</body>
+</html>
